@@ -17,17 +17,9 @@
 		6634E4B61B9BB6E000CD1759 /* ServiceEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */; settings = {ASSET_TAGS = (); }; };
 		6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */; settings = {ASSET_TAGS = (); }; };
 		6697209E1B9CD8D4006E9DA9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6697209D1B9CD8D4006E9DA9 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		669720A21B9CD9A8006E9DA9 /* TextEntryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */; settings = {ASSET_TAGS = (); }; };
+		669720A51B9CDC25006E9DA9 /* TextEntryRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669720A41B9CDC25006E9DA9 /* TextEntryRowView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		660F73771B9BAD190086AD3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 660F735B1B9BAD190086AD3D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 660F73621B9BAD190086AD3D;
-			remoteInfo = "Bonjour Broadcaster";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bonjour Broadcaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +29,6 @@
 		660F736B1B9BAD190086AD3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		660F736D1B9BAD190086AD3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		660F73701B9BAD190086AD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		660F73761B9BAD190086AD3D /* Bonjour BroadcasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bonjour BroadcasterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		660F73861B9BADF80086AD3D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		660F73871B9BADF80086AD3D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		660F738A1B9BAF760086AD3D /* BonjourHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BonjourHost.h; path = Bonjour/BonjourHost.h; sourceTree = "<group>"; };
@@ -48,17 +39,14 @@
 		6634E4BA1B9BB82300CD1759 /* ServiceEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceEditorWindowController.h; path = Sheets/ServiceEditorWindowController.h; sourceTree = "<group>"; };
 		6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceEditorWindowController.m; path = Sheets/ServiceEditorWindowController.m; sourceTree = "<group>"; };
 		6697209D1B9CD8D4006E9DA9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		669720A01B9CD9A8006E9DA9 /* TextEntryTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextEntryTableView.h; path = "Sheets/Text Entry Manipulator/TextEntryTableView.h"; sourceTree = "<group>"; };
+		669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEntryTableView.m; path = "Sheets/Text Entry Manipulator/TextEntryTableView.m"; sourceTree = "<group>"; };
+		669720A31B9CDC25006E9DA9 /* TextEntryRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextEntryRowView.h; path = "Sheets/Text Entry Manipulator/TextEntryRowView.h"; sourceTree = "<group>"; };
+		669720A41B9CDC25006E9DA9 /* TextEntryRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEntryRowView.m; path = "Sheets/Text Entry Manipulator/TextEntryRowView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		660F73601B9BAD190086AD3D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		660F73731B9BAD190086AD3D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */,
-				660F73761B9BAD190086AD3D /* Bonjour BroadcasterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,9 +114,21 @@
 			children = (
 				6634E4BA1B9BB82300CD1759 /* ServiceEditorWindowController.h */,
 				6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */,
+				6697209F1B9CD966006E9DA9 /* Text Entry Manipulator */,
 				6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */,
 			);
 			name = Sheets;
+			sourceTree = "<group>";
+		};
+		6697209F1B9CD966006E9DA9 /* Text Entry Manipulator */ = {
+			isa = PBXGroup;
+			children = (
+				669720A01B9CD9A8006E9DA9 /* TextEntryTableView.h */,
+				669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */,
+				669720A31B9CDC25006E9DA9 /* TextEntryRowView.h */,
+				669720A41B9CDC25006E9DA9 /* TextEntryRowView.m */,
+			);
+			name = "Text Entry Manipulator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,24 +151,6 @@
 			productReference = 660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */;
 			productType = "com.apple.product-type.application";
 		};
-		660F73751B9BAD190086AD3D /* Bonjour BroadcasterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 660F73831B9BAD190086AD3D /* Build configuration list for PBXNativeTarget "Bonjour BroadcasterTests" */;
-			buildPhases = (
-				660F73721B9BAD190086AD3D /* Sources */,
-				660F73731B9BAD190086AD3D /* Frameworks */,
-				660F73741B9BAD190086AD3D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				660F73781B9BAD190086AD3D /* PBXTargetDependency */,
-			);
-			name = "Bonjour BroadcasterTests";
-			productName = "Bonjour BroadcasterTests";
-			productReference = 660F73761B9BAD190086AD3D /* Bonjour BroadcasterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -181,10 +162,6 @@
 				TargetAttributes = {
 					660F73621B9BAD190086AD3D = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					660F73751B9BAD190086AD3D = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 660F73621B9BAD190086AD3D;
 					};
 				};
 			};
@@ -202,7 +179,6 @@
 			projectRoot = "";
 			targets = (
 				660F73621B9BAD190086AD3D /* Bonjour Broadcaster */,
-				660F73751B9BAD190086AD3D /* Bonjour BroadcasterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,13 +195,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		660F73741B9BAD190086AD3D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -235,29 +204,16 @@
 			files = (
 				660F73881B9BADF80086AD3D /* ViewController.m in Sources */,
 				660F738F1B9BB0580086AD3D /* BonjourService.m in Sources */,
+				669720A21B9CD9A8006E9DA9 /* TextEntryTableView.m in Sources */,
 				660F736C1B9BAD190086AD3D /* main.m in Sources */,
 				660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */,
 				6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */,
 				660F738C1B9BAF760086AD3D /* BonjourHost.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		660F73721B9BAD190086AD3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				669720A51B9CDC25006E9DA9 /* TextEntryRowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		660F73781B9BAD190086AD3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 660F73621B9BAD190086AD3D /* Bonjour Broadcaster */;
-			targetProxy = 660F73771B9BAD190086AD3D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		660F736F1B9BAD190086AD3D /* MainMenu.xib */ = {
@@ -372,42 +328,6 @@
 			};
 			name = Release;
 		};
-		660F73841B9BAD190086AD3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Bonjour BroadcasterTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bonjour Broadcaster.app/Contents/MacOS/Bonjour Broadcaster";
-			};
-			name = Debug;
-		};
-		660F73851B9BAD190086AD3D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Bonjour BroadcasterTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bonjour Broadcaster.app/Contents/MacOS/Bonjour Broadcaster";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -425,15 +345,6 @@
 			buildConfigurations = (
 				660F73811B9BAD190086AD3D /* Debug */,
 				660F73821B9BAD190086AD3D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		660F73831B9BAD190086AD3D /* Build configuration list for PBXNativeTarget "Bonjour BroadcasterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				660F73841B9BAD190086AD3D /* Debug */,
-				660F73851B9BAD190086AD3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
