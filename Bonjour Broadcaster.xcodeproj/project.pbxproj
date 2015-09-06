@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F73691B9BAD190086AD3D /* AppDelegate.m */; };
+		660F736C1B9BAD190086AD3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F736B1B9BAD190086AD3D /* main.m */; };
+		660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F736D1B9BAD190086AD3D /* Images.xcassets */; };
+		660F73711B9BAD190086AD3D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660F736F1B9BAD190086AD3D /* MainMenu.xib */; };
+		660F737D1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F737C1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m */; };
+		660F73881B9BADF80086AD3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F73871B9BADF80086AD3D /* ViewController.m */; };
+		660F738C1B9BAF760086AD3D /* BonjourHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F738B1B9BAF760086AD3D /* BonjourHost.m */; };
+		660F738F1B9BB0580086AD3D /* BonjourService.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F738E1B9BB0580086AD3D /* BonjourService.m */; };
+		6634E4B61B9BB6E000CD1759 /* ServiceEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */; settings = {ASSET_TAGS = (); }; };
+		6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		660F73771B9BAD190086AD3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 660F735B1B9BAD190086AD3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 660F73621B9BAD190086AD3D;
+			remoteInfo = "Bonjour Broadcaster";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bonjour Broadcaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		660F73671B9BAD190086AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		660F73681B9BAD190086AD3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		660F73691B9BAD190086AD3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		660F736B1B9BAD190086AD3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		660F736D1B9BAD190086AD3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		660F73701B9BAD190086AD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		660F73761B9BAD190086AD3D /* Bonjour BroadcasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bonjour BroadcasterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		660F737B1B9BAD190086AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		660F737C1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bonjour_BroadcasterTests.m; sourceTree = "<group>"; };
+		660F73861B9BADF80086AD3D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		660F73871B9BADF80086AD3D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		660F738A1B9BAF760086AD3D /* BonjourHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BonjourHost.h; path = Bonjour/BonjourHost.h; sourceTree = "<group>"; };
+		660F738B1B9BAF760086AD3D /* BonjourHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BonjourHost.m; path = Bonjour/BonjourHost.m; sourceTree = "<group>"; };
+		660F738D1B9BB0580086AD3D /* BonjourService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonjourService.h; sourceTree = "<group>"; };
+		660F738E1B9BB0580086AD3D /* BonjourService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonjourService.m; sourceTree = "<group>"; };
+		6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServiceEditor.xib; path = Sheets/ServiceEditor.xib; sourceTree = "<group>"; };
+		6634E4BA1B9BB82300CD1759 /* ServiceEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceEditorWindowController.h; path = Sheets/ServiceEditorWindowController.h; sourceTree = "<group>"; };
+		6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceEditorWindowController.m; path = Sheets/ServiceEditorWindowController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		660F73601B9BAD190086AD3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660F73731B9BAD190086AD3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		660F735A1B9BAD190086AD3D = {
+			isa = PBXGroup;
+			children = (
+				660F73651B9BAD190086AD3D /* Bonjour Broadcaster */,
+				660F73791B9BAD190086AD3D /* Bonjour BroadcasterTests */,
+				660F73641B9BAD190086AD3D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		660F73641B9BAD190086AD3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */,
+				660F73761B9BAD190086AD3D /* Bonjour BroadcasterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		660F73651B9BAD190086AD3D /* Bonjour Broadcaster */ = {
+			isa = PBXGroup;
+			children = (
+				660F73681B9BAD190086AD3D /* AppDelegate.h */,
+				660F73691B9BAD190086AD3D /* AppDelegate.m */,
+				660F73861B9BADF80086AD3D /* ViewController.h */,
+				660F73871B9BADF80086AD3D /* ViewController.m */,
+				660F73891B9BAF560086AD3D /* Bonjour */,
+				6634E4B41B9BB6AB00CD1759 /* Sheets */,
+				660F736D1B9BAD190086AD3D /* Images.xcassets */,
+				660F736F1B9BAD190086AD3D /* MainMenu.xib */,
+				660F73661B9BAD190086AD3D /* Supporting Files */,
+			);
+			path = "Bonjour Broadcaster";
+			sourceTree = "<group>";
+		};
+		660F73661B9BAD190086AD3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				660F73671B9BAD190086AD3D /* Info.plist */,
+				660F736B1B9BAD190086AD3D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		660F73791B9BAD190086AD3D /* Bonjour BroadcasterTests */ = {
+			isa = PBXGroup;
+			children = (
+				660F737C1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m */,
+				660F737A1B9BAD190086AD3D /* Supporting Files */,
+			);
+			path = "Bonjour BroadcasterTests";
+			sourceTree = "<group>";
+		};
+		660F737A1B9BAD190086AD3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				660F737B1B9BAD190086AD3D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		660F73891B9BAF560086AD3D /* Bonjour */ = {
+			isa = PBXGroup;
+			children = (
+				660F738A1B9BAF760086AD3D /* BonjourHost.h */,
+				660F738B1B9BAF760086AD3D /* BonjourHost.m */,
+				660F738D1B9BB0580086AD3D /* BonjourService.h */,
+				660F738E1B9BB0580086AD3D /* BonjourService.m */,
+			);
+			name = Bonjour;
+			sourceTree = "<group>";
+		};
+		6634E4B41B9BB6AB00CD1759 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				6634E4BA1B9BB82300CD1759 /* ServiceEditorWindowController.h */,
+				6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */,
+				6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */,
+			);
+			name = Sheets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		660F73621B9BAD190086AD3D /* Bonjour Broadcaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660F73801B9BAD190086AD3D /* Build configuration list for PBXNativeTarget "Bonjour Broadcaster" */;
+			buildPhases = (
+				660F735F1B9BAD190086AD3D /* Sources */,
+				660F73601B9BAD190086AD3D /* Frameworks */,
+				660F73611B9BAD190086AD3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bonjour Broadcaster";
+			productName = "Bonjour Broadcaster";
+			productReference = 660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */;
+			productType = "com.apple.product-type.application";
+		};
+		660F73751B9BAD190086AD3D /* Bonjour BroadcasterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660F73831B9BAD190086AD3D /* Build configuration list for PBXNativeTarget "Bonjour BroadcasterTests" */;
+			buildPhases = (
+				660F73721B9BAD190086AD3D /* Sources */,
+				660F73731B9BAD190086AD3D /* Frameworks */,
+				660F73741B9BAD190086AD3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				660F73781B9BAD190086AD3D /* PBXTargetDependency */,
+			);
+			name = "Bonjour BroadcasterTests";
+			productName = "Bonjour BroadcasterTests";
+			productReference = 660F73761B9BAD190086AD3D /* Bonjour BroadcasterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		660F735B1B9BAD190086AD3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "AppCannon Software";
+				TargetAttributes = {
+					660F73621B9BAD190086AD3D = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					660F73751B9BAD190086AD3D = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 660F73621B9BAD190086AD3D;
+					};
+				};
+			};
+			buildConfigurationList = 660F735E1B9BAD190086AD3D /* Build configuration list for PBXProject "Bonjour Broadcaster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 660F735A1B9BAD190086AD3D;
+			productRefGroup = 660F73641B9BAD190086AD3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				660F73621B9BAD190086AD3D /* Bonjour Broadcaster */,
+				660F73751B9BAD190086AD3D /* Bonjour BroadcasterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		660F73611B9BAD190086AD3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */,
+				6634E4B61B9BB6E000CD1759 /* ServiceEditor.xib in Resources */,
+				660F73711B9BAD190086AD3D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660F73741B9BAD190086AD3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		660F735F1B9BAD190086AD3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660F73881B9BADF80086AD3D /* ViewController.m in Sources */,
+				660F738F1B9BB0580086AD3D /* BonjourService.m in Sources */,
+				660F736C1B9BAD190086AD3D /* main.m in Sources */,
+				660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */,
+				6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */,
+				660F738C1B9BAF760086AD3D /* BonjourHost.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660F73721B9BAD190086AD3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660F737D1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		660F73781B9BAD190086AD3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 660F73621B9BAD190086AD3D /* Bonjour Broadcaster */;
+			targetProxy = 660F73771B9BAD190086AD3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		660F736F1B9BAD190086AD3D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660F73701B9BAD190086AD3D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		660F737E1B9BAD190086AD3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		660F737F1B9BAD190086AD3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		660F73811B9BAD190086AD3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Bonjour Broadcaster/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		660F73821B9BAD190086AD3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Bonjour Broadcaster/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		660F73841B9BAD190086AD3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Bonjour BroadcasterTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bonjour Broadcaster.app/Contents/MacOS/Bonjour Broadcaster";
+			};
+			name = Debug;
+		};
+		660F73851B9BAD190086AD3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Bonjour BroadcasterTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bonjour Broadcaster.app/Contents/MacOS/Bonjour Broadcaster";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		660F735E1B9BAD190086AD3D /* Build configuration list for PBXProject "Bonjour Broadcaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660F737E1B9BAD190086AD3D /* Debug */,
+				660F737F1B9BAD190086AD3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660F73801B9BAD190086AD3D /* Build configuration list for PBXNativeTarget "Bonjour Broadcaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660F73811B9BAD190086AD3D /* Debug */,
+				660F73821B9BAD190086AD3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660F73831B9BAD190086AD3D /* Build configuration list for PBXNativeTarget "Bonjour BroadcasterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660F73841B9BAD190086AD3D /* Debug */,
+				660F73851B9BAD190086AD3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 660F735B1B9BAD190086AD3D /* Project object */;
+}
