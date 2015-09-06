@@ -11,12 +11,12 @@
 		660F736C1B9BAD190086AD3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F736B1B9BAD190086AD3D /* main.m */; };
 		660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F736D1B9BAD190086AD3D /* Images.xcassets */; };
 		660F73711B9BAD190086AD3D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660F736F1B9BAD190086AD3D /* MainMenu.xib */; };
-		660F737D1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F737C1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m */; };
 		660F73881B9BADF80086AD3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F73871B9BADF80086AD3D /* ViewController.m */; };
 		660F738C1B9BAF760086AD3D /* BonjourHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F738B1B9BAF760086AD3D /* BonjourHost.m */; };
 		660F738F1B9BB0580086AD3D /* BonjourService.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F738E1B9BB0580086AD3D /* BonjourService.m */; };
 		6634E4B61B9BB6E000CD1759 /* ServiceEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */; settings = {ASSET_TAGS = (); }; };
 		6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */; settings = {ASSET_TAGS = (); }; };
+		6697209E1B9CD8D4006E9DA9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6697209D1B9CD8D4006E9DA9 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,6 @@
 		660F736D1B9BAD190086AD3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		660F73701B9BAD190086AD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		660F73761B9BAD190086AD3D /* Bonjour BroadcasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bonjour BroadcasterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		660F737B1B9BAD190086AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		660F737C1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bonjour_BroadcasterTests.m; sourceTree = "<group>"; };
 		660F73861B9BADF80086AD3D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		660F73871B9BADF80086AD3D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		660F738A1B9BAF760086AD3D /* BonjourHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BonjourHost.h; path = Bonjour/BonjourHost.h; sourceTree = "<group>"; };
@@ -49,6 +47,7 @@
 		6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServiceEditor.xib; path = Sheets/ServiceEditor.xib; sourceTree = "<group>"; };
 		6634E4BA1B9BB82300CD1759 /* ServiceEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceEditorWindowController.h; path = Sheets/ServiceEditorWindowController.h; sourceTree = "<group>"; };
 		6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceEditorWindowController.m; path = Sheets/ServiceEditorWindowController.m; sourceTree = "<group>"; };
+		6697209D1B9CD8D4006E9DA9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				660F73651B9BAD190086AD3D /* Bonjour Broadcaster */,
-				660F73791B9BAD190086AD3D /* Bonjour BroadcasterTests */,
 				660F73641B9BAD190086AD3D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,25 +104,9 @@
 		660F73661B9BAD190086AD3D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6697209D1B9CD8D4006E9DA9 /* .gitignore */,
 				660F73671B9BAD190086AD3D /* Info.plist */,
 				660F736B1B9BAD190086AD3D /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		660F73791B9BAD190086AD3D /* Bonjour BroadcasterTests */ = {
-			isa = PBXGroup;
-			children = (
-				660F737C1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m */,
-				660F737A1B9BAD190086AD3D /* Supporting Files */,
-			);
-			path = "Bonjour BroadcasterTests";
-			sourceTree = "<group>";
-		};
-		660F737A1B9BAD190086AD3D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				660F737B1B9BAD190086AD3D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -230,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6697209E1B9CD8D4006E9DA9 /* .gitignore in Resources */,
 				660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */,
 				6634E4B61B9BB6E000CD1759 /* ServiceEditor.xib in Resources */,
 				660F73711B9BAD190086AD3D /* MainMenu.xib in Resources */,
@@ -263,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				660F737D1B9BAD190086AD3D /* Bonjour_BroadcasterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
