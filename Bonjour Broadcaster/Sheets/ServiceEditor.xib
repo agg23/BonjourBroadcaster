@@ -6,6 +6,13 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ServiceEditorWindowController">
             <connections>
+                <outlet property="hostNameTextField" destination="bQd-Ob-fde" id="1mY-EP-Jmo"/>
+                <outlet property="ipAddressTextField" destination="vG5-LS-2AK" id="4Jx-8L-44Y"/>
+                <outlet property="portTextField" destination="eMS-Qm-5cB" id="XCM-lS-jO9"/>
+                <outlet property="remoteHostCheckBox" destination="z4x-we-hWi" id="JdK-ch-mYy"/>
+                <outlet property="serviceNameTextField" destination="5gA-nv-aHu" id="RIa-U6-sKu"/>
+                <outlet property="serviceTypeTextField" destination="i88-sW-Ica" id="M4r-iE-f5N"/>
+                <outlet property="textEntryTableView" destination="uvT-s7-QXI" id="KUj-jb-Flo"/>
                 <outlet property="window" destination="Nvh-P1-e3K" id="SmJ-Pf-0ni"/>
             </connections>
         </customObject>
@@ -242,13 +249,16 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="76" id="Uw9-X1-heE"/>
                         </constraints>
-                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8ss-xB-Ek9">
+                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8ss-xB-Ek9">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
                         </buttonCell>
+                        <connections>
+                            <action selector="saveButton:" target="-2" id="WDY-JD-9kF"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wl2-KY-9Cl">
                         <rect key="frame" x="280" y="13" width="88" height="32"/>
@@ -262,6 +272,9 @@ DQ
 Gw
 </string>
                         </buttonCell>
+                        <connections>
+                            <action selector="cancelButton:" target="-2" id="IeW-df-rrB"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

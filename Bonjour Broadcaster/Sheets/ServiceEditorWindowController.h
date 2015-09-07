@@ -8,6 +8,19 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "TextEntryTableView.h"
+
 @interface ServiceEditorWindowController : NSWindowController
+
+@property (weak) IBOutlet NSTextField *serviceNameTextField;
+@property (weak) IBOutlet NSTextField *serviceTypeTextField;
+@property (weak) IBOutlet NSTextField *portTextField;
+
+@property (weak) IBOutlet TextEntryTableView *textEntryTableView;
+
+@property (weak) IBOutlet NSButton *remoteHostCheckBox;
+
+@property (weak) IBOutlet NSTextField *hostNameTextField;
+@property (weak) IBOutlet NSTextField *ipAddressTextField;
 
 @end

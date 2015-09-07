@@ -44,6 +44,26 @@
     // Drawing code here.
 }
 
+- (NSArray *)enteredText
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    
+    for(int i = 0; i < self.rowCount; i++) {
+        TextEntryRowView *view = [self viewAtColumn:0 row:i makeIfNecessary:NO];
+        
+        if(view) {
+            NSString *string = [[view.textfield stringValue] stringByTrimmingCharactersInSet:set];
+            
+            if(![string isEqualToString:@""]) {
+                [array addObject:string];
+            }
+        }
+    }
+    
+    return [NSArray arrayWithArray:array];
+}
 
 - (void)addNewRowAfterRow:(NSView *)rowView
 {

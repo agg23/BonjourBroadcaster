@@ -12,4 +12,6 @@
 
 @property (weak) IBOutlet NSTableView *tableView;
 
+- (void)addRowAtIndex:(NSInteger)index;
+
 @end

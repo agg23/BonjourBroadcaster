@@ -10,10 +10,19 @@
 
 #import "BonjourService.h"
 
+#import "ViewController.h"
+
 @interface BonjourHost : NSObject
+
+@property (weak) ViewController *viewController;
 
 @property (strong, nonatomic) NSArray *services;
 
-+ (id)sharedInstance;
++ (BonjourHost *)sharedInstance;
+
+- (void)addNewService:(BonjourService *)service;
+
+- (void)enableService:(BonjourService *)service;
+- (BOOL)disableService:(BonjourService *)service;
 
 @end

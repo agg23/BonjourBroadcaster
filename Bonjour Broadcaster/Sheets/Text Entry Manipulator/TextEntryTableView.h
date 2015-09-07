@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSArray *rowStrings;
 
+- (NSArray *)enteredText;
+
 - (void)addNewRowAfterRow:(NSView *)rowView;
 - (void)removeRow:(NSView *)rowView;
 

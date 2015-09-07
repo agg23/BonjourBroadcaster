@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660196351B9CEFBC002E5B82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660196341B9CEFBC002E5B82 /* QuartzCore.framework */; };
 		660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F73691B9BAD190086AD3D /* AppDelegate.m */; };
 		660F736C1B9BAD190086AD3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F736B1B9BAD190086AD3D /* main.m */; };
 		660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F736D1B9BAD190086AD3D /* Images.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		660196341B9CEFBC002E5B82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bonjour Broadcaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		660F73671B9BAD190086AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660F73681B9BAD190086AD3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,16 +52,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660196351B9CEFBC002E5B82 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		660196361B9CEFC2002E5B82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				660196341B9CEFBC002E5B82 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		660F735A1B9BAD190086AD3D = {
 			isa = PBXGroup;
 			children = (
 				660F73651B9BAD190086AD3D /* Bonjour Broadcaster */,
+				660196361B9CEFC2002E5B82 /* Frameworks */,
 				660F73641B9BAD190086AD3D /* Products */,
 			);
 			sourceTree = "<group>";
