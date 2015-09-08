@@ -10,6 +10,14 @@
 
 #import <dns_sd.h>
 
+#import "DataLoader.h"
+
+@interface BonjourHost ()
+
+@property (strong, nonatomic) DataLoader *dataLoader;
+
+@end
+
 @implementation BonjourHost
 
 + (BonjourHost *)sharedInstance
@@ -33,12 +41,17 @@
 {
     self = [super init];
     if (self) {
-        BonjourService *testService = [[BonjourService alloc] init];
+        self.dataLoader = [[DataLoader alloc] init];
         
-        [testService setEnabled:YES];
-        [testService setName:@"Test service"];
+        self.services = [self.dataLoader loadServices];
         
-        self.services = @[testService];
+        if([self.services count] > 0) {
+            for(BonjourService *service in self.services) {
+                if(service.enabled) {
+                    [self enableService:service];
+                }
+            }
+        }
     }
     return self;
 }
@@ -52,6 +65,37 @@
     self.services = [NSArray arrayWithArray:array];
     
     [self.viewController addRowAtIndex:[self.services count]-1];
+    
+    [self.dataLoader saveServices:self.services];
+}
+
+- (void)updateService:(BonjourService *)service
+{
+    // TODO: Handle rebroadcasting
+    
+    if(service.serviceRef) {
+        [self disableService:service];
+        [self enableService:service];
+    }
+    
+    [self.dataLoader saveServices:self.services];
+}
+
+- (void)removeService:(BonjourService *)service
+{
+    NSInteger index = [self.services indexOfObject:service];
+    
+    if(index != NSNotFound) {
+        NSMutableArray *array = [NSMutableArray arrayWithArray:self.services];
+        
+        [array removeObjectAtIndex:index];
+        
+        self.services = [NSArray arrayWithArray:array];
+    }
+    
+    [self disableService:service];
+    
+    [self.dataLoader saveServices:self.services];
 }
 
 - (void)enableService:(BonjourService *)service
@@ -71,6 +115,10 @@
 
     
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    
+    for(NSString *string in service.txtItems) {
+        [dictionary addEntriesFromDictionary:[self stringToDictionaryWithString:string]];
+    }
         
     NSData *txtData = [NSNetService dataFromTXTRecordDictionary:dictionary];
     
@@ -85,7 +133,7 @@
     DNSServiceFlags flags = 0;
     
     NSString *domain = @"local";
-    NSString *host = @"8.8.8.8";
+    NSString *host = nil;//@"8.8.8.8";
     
     DNSServiceRef registerRef;
     DNSServiceErrorType err = DNSServiceRegister(&registerRef, flags, kDNSServiceInterfaceIndexAny, [service.name UTF8String], [service.serviceType UTF8String], [domain UTF8String], [host UTF8String], bigEndianPort, _txtLen, _txtData, NULL, NULL);
@@ -94,6 +142,12 @@
     
     if(err == kDNSServiceErr_NoError)  {
         [service setServiceRef:registerRef];
+        
+        [service setEnabled:YES];
+        
+        [self.dataLoader saveServices:self.services];
+    } else {
+        [service setEnabled:NO];
     }
     
     //[task terminate];
@@ -112,6 +166,8 @@
     DNSServiceRefDeallocate(serviceRef);
     
     NSLog(@"Service %@ disabled", [service name]);
+    
+    [self.dataLoader saveServices:self.services];
     
     return true;
 }

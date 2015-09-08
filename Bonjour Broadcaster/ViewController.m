@@ -33,8 +33,17 @@
 
 - (void)showServiceEditor
 {
+    [self showServiceEditorAndEditService:nil];
+}
+
+- (void)showServiceEditorAndEditService:(BonjourService *)service
+{
     self.serviceEditorWindowController = [[ServiceEditorWindowController alloc] initWithWindowNibName:@"ServiceEditor"];
-        
+    
+    if(service) {
+        [self.serviceEditorWindowController editService:service];
+    }
+    
     [self.view.window beginSheet:self.serviceEditorWindowController.window completionHandler:^(NSModalResponse returnCode) {
         
     }];
@@ -43,9 +52,31 @@
 - (void)tableViewRowClick:(id)sender
 {
     if([self.tableView clickedColumn] != [self.tableView columnWithIdentifier:@"enabled"]) {
-        [self showServiceEditor];
+        [self editButton:nil];
     }
 }
+
+- (IBAction)addButton:(id)sender {
+    [self showServiceEditor];
+}
+
+- (IBAction)editButton:(id)sender {
+    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:[self.tableView selectedRow]];
+    
+    [self showServiceEditorAndEditService:service];
+}
+
+- (IBAction)removeButton:(id)sender {
+    NSInteger index = [self.tableView selectedRow];
+    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:index];
+    
+    [[BonjourHost sharedInstance] removeService:service];
+    
+    [self.tableView beginUpdates];
+    [self.tableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:index] withAnimation:NSTableViewAnimationEffectNone];
+    [self.tableView endUpdates];
+}
+
 
 #pragma mark - NSTableView Methods
 
@@ -68,7 +99,7 @@
         return;
     }
     
-    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:row];
+//    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:row];
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row

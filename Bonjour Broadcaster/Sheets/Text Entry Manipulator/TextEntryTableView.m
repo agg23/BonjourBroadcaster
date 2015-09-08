@@ -117,6 +117,13 @@
     [self.heightConstraint setConstant:32 * self.rowCount];
 }
 
+- (void)setRowStrings:(NSArray *)rowStrings
+{
+    _rowStrings = rowStrings;
+    
+    self.rowCount = [rowStrings count];
+}
+
 #pragma mark - NSTableViewDelegate/DataSource Methods
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row

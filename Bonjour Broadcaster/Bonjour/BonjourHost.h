@@ -21,6 +21,8 @@
 + (BonjourHost *)sharedInstance;
 
 - (void)addNewService:(BonjourService *)service;
+- (void)updateService:(BonjourService *)service;
+- (void)removeService:(BonjourService *)service;
 
 - (void)enableService:(BonjourService *)service;
 - (BOOL)disableService:(BonjourService *)service;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		660196351B9CEFBC002E5B82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660196341B9CEFBC002E5B82 /* QuartzCore.framework */; };
+		6601963A1B9E4A95002E5B82 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 660196391B9E4A95002E5B82 /* DataLoader.m */; settings = {ASSET_TAGS = (); }; };
 		660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F73691B9BAD190086AD3D /* AppDelegate.m */; };
 		660F736C1B9BAD190086AD3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F736B1B9BAD190086AD3D /* main.m */; };
 		660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F736D1B9BAD190086AD3D /* Images.xcassets */; };
@@ -24,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		660196341B9CEFBC002E5B82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		660196381B9E4A95002E5B82 /* DataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataLoader.h; path = Storage/DataLoader.h; sourceTree = "<group>"; };
+		660196391B9E4A95002E5B82 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataLoader.m; path = Storage/DataLoader.m; sourceTree = "<group>"; };
 		660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bonjour Broadcaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		660F73671B9BAD190086AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660F73681B9BAD190086AD3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +70,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		660196371B9E4A6B002E5B82 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				660196381B9E4A95002E5B82 /* DataLoader.h */,
+				660196391B9E4A95002E5B82 /* DataLoader.m */,
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
 		660F735A1B9BAD190086AD3D = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +105,7 @@
 				660F73871B9BADF80086AD3D /* ViewController.m */,
 				660F73891B9BAF560086AD3D /* Bonjour */,
 				6634E4B41B9BB6AB00CD1759 /* Sheets */,
+				660196371B9E4A6B002E5B82 /* Storage */,
 				660F736D1B9BAD190086AD3D /* Images.xcassets */,
 				660F736F1B9BAD190086AD3D /* MainMenu.xib */,
 				660F73661B9BAD190086AD3D /* Supporting Files */,
@@ -216,6 +229,7 @@
 			files = (
 				660F73881B9BADF80086AD3D /* ViewController.m in Sources */,
 				660F738F1B9BB0580086AD3D /* BonjourService.m in Sources */,
+				6601963A1B9E4A95002E5B82 /* DataLoader.m in Sources */,
 				669720A21B9CD9A8006E9DA9 /* TextEntryTableView.m in Sources */,
 				660F736C1B9BAD190086AD3D /* main.m in Sources */,
 				660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */,

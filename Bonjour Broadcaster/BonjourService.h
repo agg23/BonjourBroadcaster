@@ -10,7 +10,7 @@
 
 #import <dns_sd.h>
 
-@interface BonjourService : NSObject
+@interface BonjourService : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) BOOL enabled;
@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *serviceType;
 @property (nonatomic) NSInteger port;
 
+@property (nonatomic) BOOL remoteEnabled;
 @property (strong, nonatomic) NSString *remoteHost;
 @property (strong, nonatomic) NSString *remoteIp;
 

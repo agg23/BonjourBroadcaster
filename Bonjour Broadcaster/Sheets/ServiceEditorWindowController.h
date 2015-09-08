@@ -10,6 +10,8 @@
 
 #import "TextEntryTableView.h"
 
+#import "BonjourService.h"
+
 @interface ServiceEditorWindowController : NSWindowController
 
 @property (weak) IBOutlet NSTextField *serviceNameTextField;
@@ -22,5 +24,7 @@
 
 @property (weak) IBOutlet NSTextField *hostNameTextField;
 @property (weak) IBOutlet NSTextField *ipAddressTextField;
+
+- (void)editService:(BonjourService *)service;
 
 @end
