@@ -739,7 +739,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
-                                        <tableColumn identifier="remoteHost" width="78" minWidth="10" maxWidth="3.4028234663852886e+38" id="VNp-Gp-Mkp">
+                                        <tableColumn identifier="remoteHost" width="141" minWidth="10" maxWidth="3.4028234663852886e+38" id="VNp-Gp-Mkp">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Remote Host">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

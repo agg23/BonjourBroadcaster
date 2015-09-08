@@ -102,6 +102,24 @@
     [service setPort:port];
     [service setTxtItems:enteredText];
     
+    if([self.remoteHostCheckBox state] == NSOnState) {
+        [service setRemoteEnabled:YES];
+    } else {
+        [service setRemoteEnabled:NO];
+    }
+    
+    NSString *remoteHost = [self.hostNameTextField stringValue];
+    
+    if(remoteHost && ![remoteHost isEqualToString:@""]) {
+        [service setRemoteHost:remoteHost];
+    }
+    
+    NSString *remoteIp = [self.ipAddressTextField stringValue];
+    
+    if(remoteIp && ![remoteIp isEqualToString:@""]) {
+        [service setRemoteIp:remoteIp];
+    }
+    
     if(self.editingService) {
         [[BonjourHost sharedInstance] updateService:service];
     } else {

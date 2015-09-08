@@ -100,20 +100,6 @@
 
 - (void)enableService:(BonjourService *)service
 {
-//    NSTask *task = [[NSTask alloc] init];
-//    
-//    [task setLaunchPath:@"/usr/bin/dns-sd"];
-//    [task setArguments:@[@"-P", service.name, service.serviceType, @"local", [NSString stringWithFormat:@"%ld", service.port], @"local.", @"127.0.0.1"]];
-//    
-//    [task launch];
-//    
-//    NSLog(@"%d", [task processIdentifier]);
-    
-    //NSData *txtData = [self formatTxtArray:@[@"Helloworld=234", @"test=234"]];
-    
-    //    NSLog(@"%@", [[NSHost hostWithAddress:@"Random IP Address"] name]);
-
-    
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     
     for(NSString *string in service.txtItems) {
@@ -122,21 +108,24 @@
         
     NSData *txtData = [NSNetService dataFromTXTRecordDictionary:dictionary];
     
-    NSString *theTXT = [[NSString alloc] initWithBytes:txtData.bytes length:txtData.length encoding:NSASCIIStringEncoding];
-    NSLog(@"%@", theTXT);
-    
-    const void* _txtData = [txtData bytes];
-    uint16_t _txtLen = (uint16_t)txtData.length;
+    const void* txtBytes = [txtData bytes];
+    uint16_t txtLen = (uint16_t)txtData.length;
     
     uint16_t bigEndianPort = NSSwapHostShortToBig((uint16_t)service.port);
     
     DNSServiceFlags flags = 0;
     
-    NSString *domain = @"local";
-    NSString *host = nil;//@"8.8.8.8";
+    NSString *domain = nil;
+    NSString *host = nil;
+    
+    if(service.remoteEnabled && service.remoteHost && ![service.remoteHost isEqualToString:@""]) {
+        domain = @"local";
+        
+        host = service.remoteHost;
+    }
     
     DNSServiceRef registerRef;
-    DNSServiceErrorType err = DNSServiceRegister(&registerRef, flags, kDNSServiceInterfaceIndexAny, [service.name UTF8String], [service.serviceType UTF8String], [domain UTF8String], [host UTF8String], bigEndianPort, _txtLen, _txtData, NULL, NULL);
+    DNSServiceErrorType err = DNSServiceRegister(&registerRef, flags, kDNSServiceInterfaceIndexAny, [service.name UTF8String], [service.serviceType UTF8String], [domain UTF8String], [host UTF8String], bigEndianPort, txtLen, txtBytes, NULL, NULL);
 
     NSLog(@"%d", err);
     
@@ -149,8 +138,6 @@
     } else {
         [service setEnabled:NO];
     }
-    
-    //[task terminate];
 }
 
 - (BOOL)disableService:(BonjourService *)service
