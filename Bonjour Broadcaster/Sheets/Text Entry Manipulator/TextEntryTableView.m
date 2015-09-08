@@ -86,6 +86,18 @@
     [self insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:rowIndex+1] withAnimation:NSTableViewAnimationEffectFade];
     
     [self updateHeight];
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        NSRect rowRect = [self rectOfRow:rowIndex+1];
+        NSRect viewRect = [[self superview] frame];
+        NSPoint scrollOrigin = rowRect.origin;
+        scrollOrigin.y = scrollOrigin.y + (rowRect.size.height - viewRect.size.height) / 2;
+        if (scrollOrigin.y < 0) scrollOrigin.y = 0;
+        [[[self superview] animator] setBoundsOrigin:scrollOrigin];
+        
+        TextEntryRowView *view = [self viewAtColumn:0 row:rowIndex+1 makeIfNecessary:YES];
+        [view.textfield becomeFirstResponder];        
+    }];
 }
 
 - (void)removeRow:(NSView *)rowView
