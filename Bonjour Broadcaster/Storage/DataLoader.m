@@ -43,6 +43,8 @@
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:services];
     
     [self.defaults setObject:data forKey:@"services"];
+    
+    [self.defaults synchronize];
 }
 
 @end
