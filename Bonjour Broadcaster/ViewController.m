@@ -61,19 +61,30 @@
 }
 
 - (IBAction)editButton:(id)sender {
-    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:[self.tableView selectedRow]];
+    NSInteger selectedRow = [self.tableView selectedRow];
+    
+    if(selectedRow == -1) {
+        return;
+    }
+    
+    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:selectedRow];
     
     [self showServiceEditorAndEditService:service];
 }
 
 - (IBAction)removeButton:(id)sender {
-    NSInteger index = [self.tableView selectedRow];
-    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:index];
+    NSInteger selectedRow = [self.tableView selectedRow];
+    
+    if(selectedRow == -1) {
+        return;
+    }
+    
+    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:selectedRow];
     
     [[BonjourHost sharedInstance] removeService:service];
     
     [self.tableView beginUpdates];
-    [self.tableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:index] withAnimation:NSTableViewAnimationEffectNone];
+    [self.tableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:selectedRow] withAnimation:NSTableViewAnimationEffectNone];
     [self.tableView endUpdates];
 }
 
