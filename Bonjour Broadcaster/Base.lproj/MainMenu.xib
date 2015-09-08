@@ -112,6 +112,19 @@
                                     <action selector="revertDocumentToSaved:" target="-1" id="iJ3-Pv-kwq"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="GvB-jO-cJ9"/>
+                            <menuItem title="Import Service" id="JPa-bV-DHF">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="importButton:" target="qSE-yU-Icd" id="xcX-bk-JY2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Export Service" id="1vZ-fQ-MVb">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="exportButton:" target="qSE-yU-Icd" id="x8l-BJ-1oP"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
                             <menuItem title="Page Setup…" keyEquivalent="P" id="qIS-W8-SiK">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
@@ -787,8 +800,11 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbx-tW-sNF">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sbx-tW-sNF">
                         <rect key="frame" x="6" y="338" width="55" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="yEj-BD-6Bt"/>
+                        </constraints>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CP8-b1-SnI">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -797,8 +813,11 @@
                             <action selector="addButton:" target="qSE-yU-Icd" id="Qg2-nq-RVE"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngf-HH-7gi">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ngf-HH-7gi">
                         <rect key="frame" x="69" y="338" width="55" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="qiF-og-zao"/>
+                        </constraints>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSListViewTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RMh-lZ-FKs">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -807,8 +826,11 @@
                             <action selector="editButton:" target="qSE-yU-Icd" id="3ar-os-Pcc"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LvQ-ts-2CS">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LvQ-ts-2CS">
                         <rect key="frame" x="132" y="338" width="55" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="Dxy-lw-A6j"/>
+                        </constraints>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VlB-C8-P4b">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -817,15 +839,37 @@
                             <action selector="removeButton:" target="qSE-yU-Icd" id="8ao-bU-MZD"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Kg-HH-f7L">
+                        <rect key="frame" x="643" y="338" width="55" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="JZj-1e-4PU"/>
+                        </constraints>
+                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z53-Ei-vJV">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="exportButton:" target="qSE-yU-Icd" id="bMe-Te-eRQ"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="8Kg-HH-f7L" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="4Av-hQ-t62"/>
+                    <constraint firstItem="LvQ-ts-2CS" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="5DZ-mr-KU6"/>
                     <constraint firstItem="06t-o6-5kc" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="38" id="HnA-47-Vo9"/>
+                    <constraint firstItem="sbx-tW-sNF" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="6" id="M2Q-g7-C1a"/>
+                    <constraint firstItem="Ngf-HH-7gi" firstAttribute="leading" secondItem="sbx-tW-sNF" secondAttribute="trailing" constant="8" id="Mey-zO-luJ"/>
                     <constraint firstItem="06t-o6-5kc" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="-1" id="XTF-2i-ERM"/>
                     <constraint firstAttribute="trailing" secondItem="06t-o6-5kc" secondAttribute="trailing" constant="-1" id="Z1h-4G-mOq"/>
+                    <constraint firstItem="Ngf-HH-7gi" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="ZZy-65-ocH"/>
+                    <constraint firstAttribute="trailing" secondItem="8Kg-HH-f7L" secondAttribute="trailing" constant="6" id="agY-2c-6UD"/>
+                    <constraint firstItem="8Kg-HH-f7L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LvQ-ts-2CS" secondAttribute="trailing" constant="8" id="gRx-4V-rAS"/>
                     <constraint firstAttribute="bottom" secondItem="06t-o6-5kc" secondAttribute="bottom" id="hVm-9b-A24"/>
+                    <constraint firstItem="LvQ-ts-2CS" firstAttribute="leading" secondItem="Ngf-HH-7gi" secondAttribute="trailing" constant="8" id="sTw-fJ-FnS"/>
+                    <constraint firstItem="sbx-tW-sNF" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="vx9-0a-93K"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="94" y="-218"/>
+            <point key="canvasLocation" x="-56" y="-68"/>
         </window>
         <viewController id="qSE-yU-Icd" customClass="ViewController">
             <connections>
@@ -838,5 +882,6 @@
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSListViewTemplate" width="14" height="10"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="NSShareTemplate" width="11" height="16"/>
     </resources>
 </document>

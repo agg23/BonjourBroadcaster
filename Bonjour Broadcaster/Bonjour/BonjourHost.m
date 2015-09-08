@@ -67,6 +67,10 @@
     [self.viewController addRowAtIndex:[self.services count]-1];
     
     [self.dataLoader saveServices:self.services];
+    
+    if(service.enabled) {
+        [self enableService:service];
+    }
 }
 
 - (void)updateService:(BonjourService *)service

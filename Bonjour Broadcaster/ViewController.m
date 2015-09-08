@@ -56,6 +56,8 @@
     }
 }
 
+#pragma mark - Buttons
+
 - (IBAction)addButton:(id)sender {
     [self showServiceEditor];
 }
@@ -86,6 +88,83 @@
     [self.tableView beginUpdates];
     [self.tableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:selectedRow] withAnimation:NSTableViewAnimationEffectNone];
     [self.tableView endUpdates];
+}
+
+- (IBAction)importButton:(id)sender {
+    NSOpenPanel *panelOpen = [NSOpenPanel openPanel];
+    
+    [panelOpen setCanChooseDirectories:NO];
+    [panelOpen setCanChooseFiles:YES];
+    [panelOpen setCanCreateDirectories:NO];
+    [panelOpen setAllowsMultipleSelection:NO];
+    [panelOpen setAllowedFileTypes:@[@"plist", @"PLIST"]];
+    
+    [panelOpen beginWithCompletionHandler:^(NSInteger result) {
+        if(result == NSFileHandlingPanelOKButton) {
+            NSLog(@"%@", [[panelOpen URL] absoluteString]);
+            [self performSelectorInBackground:@selector(loadFromURL:) withObject:[panelOpen URL]];
+//            NSDictionary *dictionary = [[NSDictionary alloc] initWithContentsOfURL:[panelOpen URL]];
+//            
+//            if(!dictionary) {
+//                // TODO: Present error
+//                return;
+//            }
+//            
+//            BonjourService *service = [BonjourService serviceFromDictionary:dictionary];
+//            
+//            if(!service) {
+//                // TODO: Present error
+//                return;
+//            }
+//            
+//            [[BonjourHost sharedInstance] addNewService:service];
+        }
+    }];
+}
+
+- (void)loadFromURL:(NSURL *)url
+{
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithContentsOfURL:url];
+    
+    NSError *error;
+    
+    if(!dictionary) {
+        // TODO: Present error
+        return;
+    }
+    
+    BonjourService *service = [BonjourService serviceFromDictionary:dictionary];
+    
+    if(!service) {
+        // TODO: Present error
+        return;
+    }
+    
+    [[BonjourHost sharedInstance] performSelectorOnMainThread:@selector(addNewService:) withObject:service waitUntilDone:NO];
+}
+
+- (IBAction)exportButton:(id)sender {
+    NSInteger selectedRow = [self.tableView selectedRow];
+    
+    if(selectedRow == -1) {
+        return;
+    }
+
+    BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:selectedRow];
+    
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    
+    [savePanel setNameFieldStringValue:[NSString stringWithFormat:@"%@.plist", service.name]];
+    
+    [savePanel beginWithCompletionHandler:^(NSInteger result) {
+        if(result == NSFileHandlingPanelOKButton) {
+            NSDictionary *dictionary = [service encodeToDictionary];
+            
+            [dictionary writeToURL:[savePanel URL] atomically:YES];
+        }
+        
+        NSLog(@"%@", [[savePanel URL] absoluteString]);
+    }];
 }
 
 

@@ -26,4 +26,8 @@
 
 @property (nonatomic) DNSServiceRef serviceRef;
 
++ (id)serviceFromDictionary:(NSDictionary *)dictionary;
+
+- (NSDictionary *)encodeToDictionary;
+
 @end
