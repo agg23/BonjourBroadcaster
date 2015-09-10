@@ -9,12 +9,14 @@
 #import "ViewController.h"
 
 #import "ServiceEditorWindowController.h"
+#import "ServiceListingWindowController.h"
 
 #import "BonjourHost.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) ServiceEditorWindowController *serviceEditorWindowController;
+@property (strong, nonatomic) ServiceListingWindowController *serviceListingWindowController;
 
 @end
 
@@ -88,6 +90,14 @@
     [self.tableView beginUpdates];
     [self.tableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:selectedRow] withAnimation:NSTableViewAnimationEffectNone];
     [self.tableView endUpdates];
+}
+
+- (IBAction)bonjourServiceListButton:(id)sender {
+    self.serviceListingWindowController = [[ServiceListingWindowController alloc] initWithWindowNibName:@"ServiceListing"];
+    
+    [self.view.window beginSheet:self.serviceListingWindowController.window completionHandler:^(NSModalResponse returnCode) {
+        
+    }];
 }
 
 - (IBAction)importButton:(id)sender {

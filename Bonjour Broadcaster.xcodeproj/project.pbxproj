@@ -18,6 +18,9 @@
 		660F738F1B9BB0580086AD3D /* BonjourService.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F738E1B9BB0580086AD3D /* BonjourService.m */; };
 		6634E4B61B9BB6E000CD1759 /* ServiceEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */; settings = {ASSET_TAGS = (); }; };
 		6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */; settings = {ASSET_TAGS = (); }; };
+		6634F95F1BA1170D00998874 /* DNSQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6634F95E1BA1170D00998874 /* DNSQuerier.m */; settings = {ASSET_TAGS = (); }; };
+		6634F9631BA126C400998874 /* ServiceListingWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6634F9611BA126C400998874 /* ServiceListingWindowController.m */; settings = {ASSET_TAGS = (); }; };
+		6634F9641BA126C400998874 /* ServiceListing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6634F9621BA126C400998874 /* ServiceListing.xib */; settings = {ASSET_TAGS = (); }; };
 		6697209E1B9CD8D4006E9DA9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6697209D1B9CD8D4006E9DA9 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
 		669720A21B9CD9A8006E9DA9 /* TextEntryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */; settings = {ASSET_TAGS = (); }; };
 		669720A51B9CDC25006E9DA9 /* TextEntryRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669720A41B9CDC25006E9DA9 /* TextEntryRowView.m */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +46,13 @@
 		6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServiceEditor.xib; path = Sheets/ServiceEditor.xib; sourceTree = "<group>"; };
 		6634E4BA1B9BB82300CD1759 /* ServiceEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceEditorWindowController.h; path = Sheets/ServiceEditorWindowController.h; sourceTree = "<group>"; };
 		6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceEditorWindowController.m; path = Sheets/ServiceEditorWindowController.m; sourceTree = "<group>"; };
+		6634F9591BA10F2800998874 /* DNSServiceMetaQuery.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = DNSServiceMetaQuery.c; path = "DNS Query/DNSServiceMetaQuery.c"; sourceTree = "<group>"; };
+		6634F95C1BA1103000998874 /* DNSServiceMetaQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSServiceMetaQuery.h; path = "DNS Query/DNSServiceMetaQuery.h"; sourceTree = "<group>"; };
+		6634F95D1BA1170D00998874 /* DNSQuerier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSQuerier.h; path = "DNS Query/DNSQuerier.h"; sourceTree = "<group>"; };
+		6634F95E1BA1170D00998874 /* DNSQuerier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNSQuerier.m; path = "DNS Query/DNSQuerier.m"; sourceTree = "<group>"; };
+		6634F9601BA126C400998874 /* ServiceListingWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceListingWindowController.h; path = Sheets/ServiceListingWindowController.h; sourceTree = "<group>"; };
+		6634F9611BA126C400998874 /* ServiceListingWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceListingWindowController.m; path = Sheets/ServiceListingWindowController.m; sourceTree = "<group>"; };
+		6634F9621BA126C400998874 /* ServiceListing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServiceListing.xib; path = Sheets/ServiceListing.xib; sourceTree = "<group>"; };
 		6697209D1B9CD8D4006E9DA9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		669720A01B9CD9A8006E9DA9 /* TextEntryTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextEntryTableView.h; path = "Sheets/Text Entry Manipulator/TextEntryTableView.h"; sourceTree = "<group>"; };
 		669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEntryTableView.m; path = "Sheets/Text Entry Manipulator/TextEntryTableView.m"; sourceTree = "<group>"; };
@@ -106,6 +116,7 @@
 				660F73891B9BAF560086AD3D /* Bonjour */,
 				6634E4B41B9BB6AB00CD1759 /* Sheets */,
 				660196371B9E4A6B002E5B82 /* Storage */,
+				6634F9581BA10EB600998874 /* DNS Query */,
 				660F736D1B9BAD190086AD3D /* Images.xcassets */,
 				660F736F1B9BAD190086AD3D /* MainMenu.xib */,
 				660F73661B9BAD190086AD3D /* Supporting Files */,
@@ -141,8 +152,22 @@
 				6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */,
 				6697209F1B9CD966006E9DA9 /* Text Entry Manipulator */,
 				6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */,
+				6634F9601BA126C400998874 /* ServiceListingWindowController.h */,
+				6634F9611BA126C400998874 /* ServiceListingWindowController.m */,
+				6634F9621BA126C400998874 /* ServiceListing.xib */,
 			);
 			name = Sheets;
+			sourceTree = "<group>";
+		};
+		6634F9581BA10EB600998874 /* DNS Query */ = {
+			isa = PBXGroup;
+			children = (
+				6634F9591BA10F2800998874 /* DNSServiceMetaQuery.c */,
+				6634F95C1BA1103000998874 /* DNSServiceMetaQuery.h */,
+				6634F95D1BA1170D00998874 /* DNSQuerier.h */,
+				6634F95E1BA1170D00998874 /* DNSQuerier.m */,
+			);
+			name = "DNS Query";
 			sourceTree = "<group>";
 		};
 		6697209F1B9CD966006E9DA9 /* Text Entry Manipulator */ = {
@@ -215,6 +240,7 @@
 			files = (
 				6697209E1B9CD8D4006E9DA9 /* .gitignore in Resources */,
 				660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */,
+				6634F9641BA126C400998874 /* ServiceListing.xib in Resources */,
 				6634E4B61B9BB6E000CD1759 /* ServiceEditor.xib in Resources */,
 				660F73711B9BAD190086AD3D /* MainMenu.xib in Resources */,
 			);
@@ -228,11 +254,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				660F73881B9BADF80086AD3D /* ViewController.m in Sources */,
+				6634F95F1BA1170D00998874 /* DNSQuerier.m in Sources */,
 				660F738F1B9BB0580086AD3D /* BonjourService.m in Sources */,
 				6601963A1B9E4A95002E5B82 /* DataLoader.m in Sources */,
 				669720A21B9CD9A8006E9DA9 /* TextEntryTableView.m in Sources */,
 				660F736C1B9BAD190086AD3D /* main.m in Sources */,
 				660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */,
+				6634F9631BA126C400998874 /* ServiceListingWindowController.m in Sources */,
 				6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */,
 				660F738C1B9BAF760086AD3D /* BonjourHost.m in Sources */,
 				669720A51B9CDC25006E9DA9 /* TextEntryRowView.m in Sources */,

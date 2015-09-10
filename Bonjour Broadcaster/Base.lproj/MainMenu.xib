@@ -852,19 +852,34 @@
                             <action selector="exportButton:" target="qSE-yU-Icd" id="bMe-Te-eRQ"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-n4-MXc">
+                        <rect key="frame" x="580" y="338" width="55" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="zqF-XH-gQY"/>
+                        </constraints>
+                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSBonjour" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0c3-WQ-qXH">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="bonjourServiceListButton:" target="qSE-yU-Icd" id="mg2-mx-R2I"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="8Kg-HH-f7L" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="4Av-hQ-t62"/>
                     <constraint firstItem="LvQ-ts-2CS" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="5DZ-mr-KU6"/>
+                    <constraint firstItem="8Kg-HH-f7L" firstAttribute="leading" secondItem="OoO-n4-MXc" secondAttribute="trailing" constant="8" id="CKh-y6-bGt"/>
                     <constraint firstItem="06t-o6-5kc" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="38" id="HnA-47-Vo9"/>
+                    <constraint firstItem="OoO-n4-MXc" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="LW0-nh-nBR"/>
                     <constraint firstItem="sbx-tW-sNF" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="6" id="M2Q-g7-C1a"/>
                     <constraint firstItem="Ngf-HH-7gi" firstAttribute="leading" secondItem="sbx-tW-sNF" secondAttribute="trailing" constant="8" id="Mey-zO-luJ"/>
                     <constraint firstItem="06t-o6-5kc" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="-1" id="XTF-2i-ERM"/>
                     <constraint firstAttribute="trailing" secondItem="06t-o6-5kc" secondAttribute="trailing" constant="-1" id="Z1h-4G-mOq"/>
                     <constraint firstItem="Ngf-HH-7gi" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="ZZy-65-ocH"/>
                     <constraint firstAttribute="trailing" secondItem="8Kg-HH-f7L" secondAttribute="trailing" constant="6" id="agY-2c-6UD"/>
-                    <constraint firstItem="8Kg-HH-f7L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LvQ-ts-2CS" secondAttribute="trailing" constant="8" id="gRx-4V-rAS"/>
                     <constraint firstAttribute="bottom" secondItem="06t-o6-5kc" secondAttribute="bottom" id="hVm-9b-A24"/>
+                    <constraint firstItem="OoO-n4-MXc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LvQ-ts-2CS" secondAttribute="trailing" constant="8" id="haG-yE-d33"/>
                     <constraint firstItem="LvQ-ts-2CS" firstAttribute="leading" secondItem="Ngf-HH-7gi" secondAttribute="trailing" constant="8" id="sTw-fJ-FnS"/>
                     <constraint firstItem="sbx-tW-sNF" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="vx9-0a-93K"/>
                 </constraints>
@@ -880,6 +895,7 @@
     </objects>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSBonjour" width="32" height="32"/>
         <image name="NSListViewTemplate" width="14" height="10"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="NSShareTemplate" width="11" height="16"/>
