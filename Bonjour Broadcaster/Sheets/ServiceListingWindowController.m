@@ -81,6 +81,12 @@
     
     if([tableColumn.identifier isEqualToString:@"service"]) {
         if([item isKindOfClass:[ServiceListingTopLevelItem class]]) {
+            ServiceListingTopLevelItem *topLevelItem = (ServiceListingTopLevelItem *)item;
+            
+            if([topLevelItem humanReadableType]) {
+                return [topLevelItem humanReadableType];
+            }
+            
             return [(ServiceListingTopLevelItem *)item type];
         } else {
             return item;

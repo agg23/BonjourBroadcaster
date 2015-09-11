@@ -10,6 +10,7 @@
 
 @interface ServiceListingTopLevelItem : NSObject
 
+@property (strong, nonatomic) NSString *humanReadableType;
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSString *domain;
 

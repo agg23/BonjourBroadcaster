@@ -23,6 +23,7 @@
 		6634F9641BA126C400998874 /* ServiceListing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6634F9621BA126C400998874 /* ServiceListing.xib */; settings = {ASSET_TAGS = (); }; };
 		6634F9681BA2199B00998874 /* ServiceListingTopLevelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6634F9671BA2199B00998874 /* ServiceListingTopLevelItem.m */; settings = {ASSET_TAGS = (); }; };
 		6634F96B1BA2796200998874 /* NameResolverNetServiceBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6634F96A1BA2796200998874 /* NameResolverNetServiceBrowser.m */; settings = {ASSET_TAGS = (); }; };
+		6634F96D1BA364A100998874 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6634F96C1BA364A100998874 /* Services.plist */; settings = {ASSET_TAGS = (); }; };
 		6697209E1B9CD8D4006E9DA9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6697209D1B9CD8D4006E9DA9 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
 		669720A21B9CD9A8006E9DA9 /* TextEntryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */; settings = {ASSET_TAGS = (); }; };
 		669720A51B9CDC25006E9DA9 /* TextEntryRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669720A41B9CDC25006E9DA9 /* TextEntryRowView.m */; settings = {ASSET_TAGS = (); }; };
@@ -59,6 +60,7 @@
 		6634F9671BA2199B00998874 /* ServiceListingTopLevelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceListingTopLevelItem.m; path = Sheets/ServiceListing/ServiceListingTopLevelItem.m; sourceTree = "<group>"; };
 		6634F9691BA2796200998874 /* NameResolverNetServiceBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NameResolverNetServiceBrowser.h; path = "DNS Query/NameResolverNetServiceBrowser.h"; sourceTree = "<group>"; };
 		6634F96A1BA2796200998874 /* NameResolverNetServiceBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NameResolverNetServiceBrowser.m; path = "DNS Query/NameResolverNetServiceBrowser.m"; sourceTree = "<group>"; };
+		6634F96C1BA364A100998874 /* Services.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Services.plist; sourceTree = "<group>"; };
 		6697209D1B9CD8D4006E9DA9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		669720A01B9CD9A8006E9DA9 /* TextEntryTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextEntryTableView.h; path = "Sheets/Text Entry Manipulator/TextEntryTableView.h"; sourceTree = "<group>"; };
 		669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEntryTableView.m; path = "Sheets/Text Entry Manipulator/TextEntryTableView.m"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		660F73661B9BAD190086AD3D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6634F96C1BA364A100998874 /* Services.plist */,
 				6697209D1B9CD8D4006E9DA9 /* .gitignore */,
 				660F73671B9BAD190086AD3D /* Info.plist */,
 				660F736B1B9BAD190086AD3D /* main.m */,
@@ -256,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6634F96D1BA364A100998874 /* Services.plist in Resources */,
 				6697209E1B9CD8D4006E9DA9 /* .gitignore in Resources */,
 				660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */,
 				6634F9641BA126C400998874 /* ServiceListing.xib in Resources */,

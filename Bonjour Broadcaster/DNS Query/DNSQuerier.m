@@ -18,6 +18,8 @@
 @property (nonatomic) BOOL searchingTopLevel;
 @property (nonatomic) NSInteger index;
 
+@property (strong, nonatomic) NSArray *knownServices;
+
 @end
 
 @implementation DNSQuerier
@@ -32,6 +34,8 @@
         self.netServiceBrowser = [[NSNetServiceBrowser alloc] init];
         self.netServiceBrowser.delegate = self;
         
+        [self loadKnownServices];
+        
         NSString *browseType = @"_services._dns-sd._udp.";
         
         self.searchingTopLevel = true;
@@ -39,6 +43,15 @@
         [self.netServiceBrowser searchForServicesOfType:browseType inDomain:@""];
     }
     return self;
+}
+
+- (void)loadKnownServices
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Services" ofType:@"plist"];
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    self.knownServices = [dictionary objectForKey:@"Services"];
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser didFindService:(NSNetService *)service moreComing:(BOOL)moreComing
@@ -54,6 +67,14 @@
         if(![self topLevelItemExistsWithServiceType:type]) {
             ServiceListingTopLevelItem *item = [[ServiceListingTopLevelItem alloc] init];
             [item setType:type];
+            
+            NSString *typeWithPeriod = [type stringByAppendingString:@"."];
+            NSString *humanReadableType = [self humanReadableTypeStringForServiceType:typeWithPeriod];
+            
+            if(humanReadableType) {
+                [item setHumanReadableType:humanReadableType];
+            }
+            
             [item setMasterService:service];
             
             self.detectedServices = [self.detectedServices arrayByAddingObject:item];
@@ -80,7 +101,38 @@
 //        [browser stop];
         
         if(![browser isEqual:self.netServiceBrowser]) {
-//            [self.serviceNameResolvers removeObject:browser];
+            // Sort array, with named items on top, and unnamed services below
+            self.detectedServices = [self.detectedServices sortedArrayUsingComparator:^NSComparisonResult(ServiceListingTopLevelItem *obj1, ServiceListingTopLevelItem *obj2) {
+                NSString *compareType1 = [obj1 humanReadableType];
+                NSString *compareType2 = [obj2 humanReadableType];
+                
+                BOOL humanReadable1 = true;
+                BOOL humanReadable2 = true;
+                
+                if(!compareType1) {
+                    compareType1 = [obj1 type];
+                    humanReadable1 = false;
+                }
+                
+                if(!compareType2) {
+                    compareType2 = [obj2 type];
+                    humanReadable2 = false;
+                }
+                
+                if(humanReadable1) {
+                    if(humanReadable2) {
+                        return [compareType1 compare:compareType2];
+                    } else {
+                        return NSOrderedAscending;
+                    }
+                }
+                
+                if(humanReadable2) {
+                    return NSOrderedDescending;
+                }
+                
+                return [compareType1 compare:compareType2];
+            }];
         }
     }
     
@@ -118,6 +170,17 @@
     }
     
     return false;
+}
+
+- (NSString *)humanReadableTypeStringForServiceType:(NSString *)type
+{
+    for(NSDictionary *dictionary in self.knownServices) {
+        if([[dictionary objectForKey:@"Service"] isEqualToString:type]) {
+            return [dictionary objectForKey:@"Name"];
+        }
+    }
+    
+    return nil;
 }
 
 @end

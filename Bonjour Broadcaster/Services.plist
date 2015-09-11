@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Services</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>iTunes Music Sharing</string>
+			<key>Service</key>
+			<string>_daap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iChat AV</string>
+			<key>Service</key>
+			<string>_presence._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iChat 1.0</string>
+			<key>Service</key>
+			<string>_ichat._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>HTTP</string>
+			<key>Service</key>
+			<string>_http._tcp.</string>
+			<key>Default Port</key>
+			<integer>80</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>FTP</string>
+			<key>Service</key>
+			<string>_ftp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Real Time Stream Control Protocol</string>
+			<key>Service</key>
+			<string>_rtsp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>SubEthaEdit</string>
+			<key>Service</key>
+			<string>_hydra._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>XCode Distributed Compiler</string>
+			<key>Service</key>
+			<string>_distcc._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iConquer</string>
+			<key>Service</key>
+			<string>_iconquer._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>VueProRenderCow</string>
+			<key>Service</key>
+			<string>_vue4rendercow._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>QMaster</string>
+			<key>Service</key>
+			<string>_qmp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>AquaMon</string>
+			<key>Service</key>
+			<string>_aquamon._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>TiVo</string>
+			<key>Service</key>
+			<string>_tivo_servemedia._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Airport Base Station</string>
+			<key>Service</key>
+			<string>_airport._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple File Sharing</string>
+			<key>Service</key>
+			<string>_afpovertcp._tcp.</string>
+			<key>Schema</key>
+			<string>afp</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Print Spooler</string>
+			<key>Service</key>
+			<string>_printer._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Internet Printing Protocol</string>
+			<key>Service</key>
+			<string>_ipp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Printer PDL Data Stream</string>
+			<key>Service</key>
+			<string>_pdl-datastream._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Sybase Server</string>
+			<key>Service</key>
+			<string>_sybase-tds._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Remote AppleEvents</string>
+			<key>Service</key>
+			<string>_eppc._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Workgroup Manager</string>
+			<key>Service</key>
+			<string>_workstation._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Mac OS X Duplicate Suppression</string>
+			<key>Service</key>
+			<string>_MacOSXDupSuppress._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>SSH</string>
+			<key>Service</key>
+			<string>_ssh._tcp.</string>
+			<key>Default Port</key>
+			<integer>21</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Telnet</string>
+			<key>Service</key>
+			<string>_telnet._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Trivial FTP</string>
+			<key>Service</key>
+			<string>_tftp._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Samba</string>
+			<key>Service</key>
+			<string>_smb._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>XServe RAID</string>
+			<key>Service</key>
+			<string>_xserveraid._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Fluid Theme Server</string>
+			<key>Service</key>
+			<string>_chfts._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>NetBIOS Name Service</string>
+			<key>Service</key>
+			<string>_netbios-ns._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>NetBIOS Session Service</string>
+			<key>Service</key>
+			<string>_netbios-ssn._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>mDNS Update Test</string>
+			<key>Service</key>
+			<string>_testupdate._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>mDNS Large TXT Test</string>
+			<key>Service</key>
+			<string>_testlargetxt._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>mDNS Dual TXT Test</string>
+			<key>Service</key>
+			<string>_testdualtxt._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Safari Menu</string>
+			<key>Service</key>
+			<string>_safarimenu._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Clipboard Sharing</string>
+			<key>Service</key>
+			<string>_clipboard._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple Password Server</string>
+			<key>Service</key>
+			<string>_apple-sasl._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>DO over NSSocketPort</string>
+			<key>Service</key>
+			<string>_nssocketport._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>MP3 Sushi</string>
+			<key>Service</key>
+			<string>_mp3sushi._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iChalk</string>
+			<key>Service</key>
+			<string>_ichalkboard._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Screen Sharing</string>
+			<key>Service</key>
+			<string>_ssscreenshare._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iStorm</string>
+			<key>Service</key>
+			<string>_istorm._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Project Gridlock</string>
+			<key>Service</key>
+			<string>_chess._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>ARTIS Team Task</string>
+			<key>Service</key>
+			<string>_teamlist._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>address-o-sync</string>
+			<key>Service</key>
+			<string>_aSync._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Nicecast</string>
+			<key>Service</key>
+			<string>_shoutcast._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Net Monitor Server</string>
+			<key>Service</key>
+			<string>_netmonitorserver._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Net Monitor Anti-Piracy Service</string>
+			<key>Service</key>
+			<string>_ecbyesfsgksc._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>ClipboardSharing</string>
+			<key>Service</key>
+			<string>_clipboardsharing._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>PostegreSQL Server</string>
+			<key>Service</key>
+			<string>_postgresql._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Hotwayd</string>
+			<key>Service</key>
+			<string>_hotwayd._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>CVS PServer</string>
+			<key>Service</key>
+			<string>_cvspserver._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>POP3</string>
+			<key>Service</key>
+			<string>_pop3._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>RendezvousPong</string>
+			<key>Service</key>
+			<string>_rendezvousPong._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>imap4 over TLS/SSL</string>
+			<key>Service</key>
+			<string>_imaps._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>IMAP</string>
+			<key>Service</key>
+			<string>_imap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>pop3 over TSL/SSL</string>
+			<key>Service</key>
+			<string>_pop3s._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Bootstrap Protocol Server</string>
+			<key>Service</key>
+			<string>_bootps._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Shell</string>
+			<key>Service</key>
+			<string>_shell._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Remote login a la telnet</string>
+			<key>Service</key>
+			<string>_login._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>The Cheat</string>
+			<key>Service</key>
+			<string>_cheat._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>MacFOH Remote</string>
+			<key>Service</key>
+			<string>_macfoh-remote._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Teleport</string>
+			<key>Service</key>
+			<string>_teleport._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>InterBase Database Remote Protocol</string>
+			<key>Service</key>
+			<string>_gds_db._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iPhoto Picture Sharing</string>
+			<key>Service</key>
+			<string>_dpap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Authentication Service</string>
+			<key>Service</key>
+			<string>_auth._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>TI Navigator</string>
+			<key>Service</key>
+			<string>_tinavigator._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>TI Connect Manager</string>
+			<key>Service</key>
+			<string>_tieducationalhandhelddevice._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>MenuTunes Sharing</string>
+			<key>Service</key>
+			<string>_mttp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Spin Crisis</string>
+			<key>Service</key>
+			<string>_spincrisis._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>MYOB AccountEdge</string>
+			<key>Service</key>
+			<string>_accountedge._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple Application Engineering Services</string>
+			<key>Service</key>
+			<string>_aecoretech._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Bag Of Unusual Strategy Games</string>
+			<key>Service</key>
+			<string>_bousg._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Now Contact</string>
+			<key>Service</key>
+			<string>_contactserver._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>CyTV</string>
+			<key>Service</key>
+			<string>_cytv._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>EyeHome</string>
+			<key>Service</key>
+			<string>_difi._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Earphoria</string>
+			<key>Service</key>
+			<string>_earphoria._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Interactive Room Software Infrastructure</string>
+			<key>Service</key>
+			<string>_eheap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>DataEnvoy</string>
+			<key>Service</key>
+			<string>_embrace._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>FaceSpan</string>
+			<key>Service</key>
+			<string>_facespan._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Fjork</string>
+			<key>Service</key>
+			<string>_fjork._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>FileMaker Pro</string>
+			<key>Service</key>
+			<string>_fmpro-internal._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Crocodile FTP Server</string>
+			<key>Service</key>
+			<string>_ftpcroco._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>SnapMail</string>
+			<key>Service</key>
+			<string>_gbs-smp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>SnapTalk</string>
+			<key>Service</key>
+			<string>_gbs-stp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Roxio ToastAnywhere™ Recorder Sharing</string>
+			<key>Service</key>
+			<string>_grillezvous._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>H.323 streaming</string>
+			<key>Service</key>
+			<string>_h323._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Image Capture Networking</string>
+			<key>Service</key>
+			<string>_ica-networking._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iMidi</string>
+			<key>Service</key>
+			<string>_imidi._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iSparx</string>
+			<key>Service</key>
+			<string>_isparx._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iShare</string>
+			<key>Service</key>
+			<string>_ishare._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iWork Server</string>
+			<key>Service</key>
+			<string>_iwork._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Liaison</string>
+			<key>Service</key>
+			<string>_liaison._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>LonTalk over IP</string>
+			<key>Service</key>
+			<string>_lontalk._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Echelon LNS Remote client</string>
+			<key>Service</key>
+			<string>_lonworks._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>MoneyWorks Gold/Datacentre</string>
+			<key>Service</key>
+			<string>_moneyworks._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Network Clipboard Broadcasts</string>
+			<key>Service</key>
+			<string>_ncbroadcast._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Network Clipboard Direct Transfers</string>
+			<key>Service</key>
+			<string>_ncdirect._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Network Clipboard Sync Server</string>
+			<key>Service</key>
+			<string>_ncsyncserver._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Escale</string>
+			<key>Service</key>
+			<string>_newton-dock._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Network File System</string>
+			<key>Service</key>
+			<string>_nfs._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>OmniWeb Bookmark Sharing</string>
+			<key>Service</key>
+			<string>_omni-bookmark._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>OpenBase SQL</string>
+			<key>Service</key>
+			<string>_openbase._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Parallel Operation and Control Heuristic</string>
+			<key>Service</key>
+			<string>_poch._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Pop-Pop</string>
+			<key>Service</key>
+			<string>_pop_2_ambrosia._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Picture Transfer Protocol</string>
+			<key>Service</key>
+			<string>_ptp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Remote I/O USB Printer</string>
+			<key>Service</key>
+			<string>_riousbprint._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Remote Frame Buffer</string>
+			<key>Service</key>
+			<string>_rfb._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Scone</string>
+			<key>Service</key>
+			<string>_scone._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Speed Download</string>
+			<key>Service</key>
+			<string>_sdsharing._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>seeCard</string>
+			<key>Service</key>
+			<string>_seeCard._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Shout</string>
+			<key>Service</key>
+			<string>_shout._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Simple Object Access Protocol</string>
+			<key>Service</key>
+			<string>_soap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>launchTunes</string>
+			<key>Service</key>
+			<string>_spl-itunes._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>netTunes</string>
+			<key>Service</key>
+			<string>_spr-itunes._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Strateges</string>
+			<key>Service</key>
+			<string>_strateges._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Sun Grid Engine (Execution Host)</string>
+			<key>Service</key>
+			<string>_sge-exec._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Sun Grid Engine (Master)</string>
+			<key>Service</key>
+			<string>_sge-qmaster._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Sticky Notes</string>
+			<key>Service</key>
+			<string>_stickynotes._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Synchronize! Pro X</string>
+			<key>Service</key>
+			<string>_sxqdea._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Power Card</string>
+			<key>Service</key>
+			<string>_rce._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Universal Plug and Play</string>
+			<key>Service</key>
+			<string>_upnp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>uTest</string>
+			<key>Service</key>
+			<string>_utest._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>WebDAV</string>
+			<key>Service</key>
+			<string>_webdav._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Whamb</string>
+			<key>Service</key>
+			<string>_whamb._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Web Services</string>
+			<key>Service</key>
+			<string>_ws._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>XServe RAID Synchronization</string>
+			<key>Service</key>
+			<string>_xsync._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>SliMP3 Server Command-Line Interface</string>
+			<key>Service</key>
+			<string>_slimdevices_slimp3_cli._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>SliMP3 Server Web Interface</string>
+			<key>Service</key>
+			<string>_slimdevices_slimp3_http._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Wired Server</string>
+			<key>Service</key>
+			<string>_wired._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Now Up-to-Date</string>
+			<key>Service</key>
+			<string>_eventserver._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Remote Process Execution</string>
+			<key>Service</key>
+			<string>_exec._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Xgrid Technology Preview</string>
+			<key>Service</key>
+			<string>_beep._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iSpQ VideoChat</string>
+			<key>Service</key>
+			<string>_ispq-vc._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Animo License Server</string>
+			<key>Service</key>
+			<string>_animolmd._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Animo Batch Server</string>
+			<key>Service</key>
+			<string>_animobserver._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Goban</string>
+			<key>Service</key>
+			<string>_ch-sente-go-server._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Peer-to-Peer Chat</string>
+			<key>Service</key>
+			<string>_p2pchat._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>SubEthaEdit 2</string>
+			<key>Service</key>
+			<string>_see._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>AirTunes</string>
+			<key>Service</key>
+			<string>_raop._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple Remote Desktop</string>
+			<key>Service</key>
+			<string>_net-assistant._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>AccessOne</string>
+			<key>Service</key>
+			<string>_accessone._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>ActionItems</string>
+			<key>Service</key>
+			<string>_actionitems._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Address-O-Matic</string>
+			<key>Service</key>
+			<string>_addressbook._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>BuildForge Agent</string>
+			<key>Service</key>
+			<string>_bfagent._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Big Bang Chess</string>
+			<key>Service</key>
+			<string>_bigbangchess._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Backup Simplicity</string>
+			<key>Service</key>
+			<string>_bsqdea._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Published Collection Object</string>
+			<key>Service</key>
+			<string>_collection._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Vortimac Dossier Protocol</string>
+			<key>Service</key>
+			<string>_dossier._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>ebXML Messaging</string>
+			<key>Service</key>
+			<string>_ebms._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>ebXML Registry</string>
+			<key>Service</key>
+			<string>_ebreg._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>FAXstf</string>
+			<key>Service</key>
+			<string>_faxstfx._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Fish</string>
+			<key>Service</key>
+			<string>_fish._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>FontAgent Pro</string>
+			<key>Service</key>
+			<string>_fontagentnode._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Published iFolder</string>
+			<key>Service</key>
+			<string>_ifolder._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iLynX</string>
+			<key>Service</key>
+			<string>_ilynx._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>IP Broadcaster</string>
+			<key>Service</key>
+			<string>_ipbroadcaster._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iSticky</string>
+			<key>Service</key>
+			<string>_isticky._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Lan2P P2P Network Protocol</string>
+			<key>Service</key>
+			<string>_lan2p._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Mac Minder</string>
+			<key>Service</key>
+			<string>_macminder._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>OD4Contact</string>
+			<key>Service</key>
+			<string>_odabsharing._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Quinn Game Server</string>
+			<key>Service</key>
+			<string>_quinn._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>RealPlayer Shared Favorites</string>
+			<key>Service</key>
+			<string>_realplayfavs._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>RubyGems GemServer</string>
+			<key>Service</key>
+			<string>_rubygems._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Salling Clicker</string>
+			<key>Service</key>
+			<string>_sallingclicker._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>serendiPd Shared Patches for Pure Data</string>
+			<key>Service</key>
+			<string>_serendipd._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Mac OS X Server Admin</string>
+			<key>Service</key>
+			<string>_servermgr._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>TI Connect Manager</string>
+			<key>Service</key>
+			<string>_ticonnectmgr._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Virtual Object System</string>
+			<key>Service</key>
+			<string>_vos._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Roku Cascade Wormhole Protocol</string>
+			<key>Service</key>
+			<string>_wormhole._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Novell Collaboration Workgroup</string>
+			<key>Service</key>
+			<string>_workgroup._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>xTime Project</string>
+			<key>Service</key>
+			<string>_xtshapro._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>World Book Encyclopedia</string>
+			<key>Service</key>
+			<string>_WorldBook2004ST._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>NetNewsWire</string>
+			<key>Service</key>
+			<string>_feed-sharing._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>SFTP</string>
+			<key>Service</key>
+			<string>_sftp-ssh._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>AirProjector</string>
+			<key>Service</key>
+			<string>_airprojector._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple Software Restore</string>
+			<key>Service</key>
+			<string>_asr._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Axis Video Cameras</string>
+			<key>Service</key>
+			<string>_axis-video._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Big Bang Mancala</string>
+			<key>Service</key>
+			<string>_bigbangmancala._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Conferencing Protocol</string>
+			<key>Service</key>
+			<string>_cuseeme._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>CodeWarrior HTI Xscale PowerTAP</string>
+			<key>Service</key>
+			<string>_cw-codetap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>CodeWarrior HTI DPI PowerTAP</string>
+			<key>Service</key>
+			<string>_cw-dpitap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>CodeWarrior HTI OnCE PowerTAP</string>
+			<key>Service</key>
+			<string>_cw-oncetap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>CodeWarrior HTI COP PowerTAP</string>
+			<key>Service</key>
+			<string>_cw-powertap._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iTunes Digital Audio Control Protocol</string>
+			<key>Service</key>
+			<string>_dacp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>DNS Long-Lived Queries</string>
+			<key>Service</key>
+			<string>_dns-llq._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>DNS Dynamic Update Service</string>
+			<key>Service</key>
+			<string>_dns-update._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Domain Name Server</string>
+			<key>Service</key>
+			<string>_domain._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Home Media Control Protocol</string>
+			<key>Service</key>
+			<string>_hmcp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Inter Asterisk eXchange (VoIP)</string>
+			<key>Service</key>
+			<string>_iax._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Idle Hands iHouse Protocol</string>
+			<key>Service</key>
+			<string>_ihouse._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Jedit X</string>
+			<key>Service</key>
+			<string>_jedit._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Kerberos</string>
+			<key>Service</key>
+			<string>_kerberos._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Kerberos Administration</string>
+			<key>Service</key>
+			<string>_kerberos-adm._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Logic Pro Distributed Audio</string>
+			<key>Service</key>
+			<string>_logicnode._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Network Time Protocol</string>
+			<key>Service</key>
+			<string>_ntp._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>PTNetPro Service</string>
+			<key>Service</key>
+			<string>_ptnetprosrv2._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>ARTvps RenderDrive/PURE Renderer Protocol</string>
+			<key>Service</key>
+			<string>_renderpipe._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Rsync</string>
+			<key>Service</key>
+			<string>_rsync._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Schick</string>
+			<key>Service</key>
+			<string>_schick._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Session Initiation Protocol (VoIP)</string>
+			<key>Service</key>
+			<string>_sip._udp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Synchronize! X Plus 2.0</string>
+			<key>Service</key>
+			<string>_syncqdea._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Timbuktu</string>
+			<key>Service</key>
+			<string>_timbuktu._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>XMPP Client Connection</string>
+			<key>Service</key>
+			<string>_xmpp-client._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>XMPP Server Connection</string>
+			<key>Service</key>
+			<string>_xmpp-server._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>xTime License</string>
+			<key>Service</key>
+			<string>_xtimelicense._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>XUL over HTTP</string>
+			<key>Service</key>
+			<string>_xul-http._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Big Bang Backgammon</string>
+			<key>Service</key>
+			<string>_bigbangbackgammon._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Big Bang Checkers</string>
+			<key>Service</key>
+			<string>_bigbangcheckers._tcp.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Skype</string>
+			<key>Service</key>
+			<string>_skype._tcp.</string>
+		</dict>
+	</array>
+</dict>
+</plist>
