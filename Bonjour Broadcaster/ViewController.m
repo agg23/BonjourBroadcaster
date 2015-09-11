@@ -238,9 +238,10 @@
         BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:row];
         
         if([object boolValue]) {
-            [[BonjourHost sharedInstance] enableService:service];
             [service setEnabled:true];
+            [[BonjourHost sharedInstance] enableService:service];
         } else {
+            [service setEnabled:false];
             [service setEnabled:![[BonjourHost sharedInstance] disableService:service]];
         }
     }
