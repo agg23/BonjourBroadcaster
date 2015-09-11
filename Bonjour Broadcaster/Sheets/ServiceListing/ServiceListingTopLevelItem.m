@@ -10,4 +10,14 @@
 
 @implementation ServiceListingTopLevelItem
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.resolvedNames = [NSArray array];
+        self.resolvingServices = [NSArray array];
+    }
+    return self;
+}
+
 @end

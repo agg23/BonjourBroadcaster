@@ -10,11 +10,12 @@
 
 @interface ServiceListingTopLevelItem : NSObject
 
-@property (strong, nonatomic) NSString *resolvedName;
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSString *domain;
 
+@property (strong, nonatomic) NSArray *resolvedNames;
+
 @property (strong, nonatomic) NSNetService *masterService;
-@property (strong, nonatomic) NSNetService *resolvedService;
+@property (strong, nonatomic) NSArray *resolvingServices;
 
 @end

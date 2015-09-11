@@ -97,6 +97,12 @@
         [nameResolver setDelegate:self];
         [nameResolver setMasterService:service];
         
+        ServiceListingTopLevelItem *item = [[ServiceListingTopLevelItem alloc] init];
+        [item setType:type];
+        [item setMasterService:service];
+        
+        self.detectedServices = [self.detectedServices arrayByAddingObject:item];
+        
         [self.serviceNameResolvers addObject:nameResolver];
         
         [nameResolver searchForServicesOfType:type inDomain:@""];
@@ -105,11 +111,17 @@
         
         NameResolverNetServiceBrowser *nameResolver = (NameResolverNetServiceBrowser *)browser;
         
-        ServiceListingTopLevelItem *item = [[ServiceListingTopLevelItem alloc] init];
-        [item setType:[service type]];
+        ServiceListingTopLevelItem *item = [self topLevelItemWithMasterService:[nameResolver masterService]];
 //        [item setDomain:domainString];
-        [item setMasterService:[nameResolver masterService]];
-        [item setResolvedService:service];
+//        [item setResolvedService:service];
+        
+        if(!item) {
+            NSLog(@"Error, no found top level item");
+            return;
+        }
+        
+        [item setResolvedNames:[[item resolvedNames] arrayByAddingObject:[service name]]];
+        [item setResolvingServices:[[item resolvingServices] arrayByAddingObject:service]];
         
         self.detectedServices = [self.detectedServices arrayByAddingObject:item];
         
@@ -134,6 +146,17 @@
 ////            [self searchTest];
 ////        }];
 //    }
+}
+
+- (ServiceListingTopLevelItem *)topLevelItemWithMasterService:(NSNetService *)masterService
+{
+    for(ServiceListingTopLevelItem *item in self.detectedServices) {
+        if([[item masterService] isEqual:masterService]) {
+            return item;
+        }
+    }
+    
+    return nil;
 }
 
 - (void)searchTest

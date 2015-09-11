@@ -50,7 +50,8 @@
 {
     if(item && [item isKindOfClass:[ServiceListingTopLevelItem class]]) {
         // Children of given item
-        return @"";
+        NSString *name = [[(ServiceListingTopLevelItem *)item resolvedNames] objectAtIndex:index];
+        return name;
     } else if(item == nil) {
         return [self.topLevelItems objectAtIndex:index];
     }
@@ -64,20 +65,31 @@
 
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
 {
+    if(item && [item isKindOfClass:[ServiceListingTopLevelItem class]]) {
+        // Children of given item
+        return [[(ServiceListingTopLevelItem *)item resolvedNames] count];
+    }
+    
     return [self.topLevelItems count];
 }
 
 - (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
 {
-    if(!item || ![item isKindOfClass:[ServiceListingTopLevelItem class]]) {
+    if(!item || (![item isKindOfClass:[ServiceListingTopLevelItem class]] && ![item isKindOfClass:[NSString class]])) {
         return @"";
     }
     
     if([tableColumn.identifier isEqualToString:@"service"]) {
-        return [(ServiceListingTopLevelItem *)item type];
+        if([item isKindOfClass:[ServiceListingTopLevelItem class]]) {
+            return [(ServiceListingTopLevelItem *)item type];
+        } else {
+            return item;
+        }
     }
     else if([tableColumn.identifier isEqualToString:@"domain"]) {
-        return [(ServiceListingTopLevelItem *)item domain];
+        if([item isKindOfClass:[ServiceListingTopLevelItem class]]) {
+            return [(ServiceListingTopLevelItem *)item domain];
+        }
     }
     
     return @"";
