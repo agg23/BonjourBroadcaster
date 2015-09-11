@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DNSQuerier : NSObject
+@interface DNSQuerier : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate>
 
 @property (strong, nonatomic) NSArray *detectedServices;
 

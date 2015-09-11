@@ -8,6 +8,9 @@
 
 #import "DNSQuerier.h"
 
+#import "ServiceListingTopLevelItem.h"
+#import "NameResolverNetServiceBrowser.h"
+
 #include <dns_sd.h>
 #include <arpa/nameser.h>
 #include <sys/socket.h>
@@ -19,6 +22,15 @@
 #define MAX_DOMAIN_NAME 255
 #define kServiceMetaQueryName  "_services._dns-sd._udp.local."
 
+@interface DNSQuerier ()
+
+@property (strong, nonatomic) NSNetServiceBrowser *netServiceBrowser;
+@property (strong, nonatomic) NSMutableArray *serviceNameResolvers;
+@property (nonatomic) BOOL searchingTopLevel;
+@property (nonatomic) NSInteger index;
+
+@end
+
 @implementation DNSQuerier
 
 - (instancetype)init
@@ -26,45 +38,137 @@
     self = [super init];
     if (self) {
         self.detectedServices = [NSArray array];
+        self.serviceNameResolvers = [NSMutableArray array];
         
-        DNSServiceErrorType error;
+        self.netServiceBrowser = [[NSNetServiceBrowser alloc] init];
+        self.netServiceBrowser.delegate = self;
         
-        DNSServiceRef ref;
+//        DNSServiceErrorType error;
+//        
+//        DNSServiceRef ref;
+//        
+//        /* Issue a Multicast DNS query for the service type meta-query PTR record. */
+//        error = DNSServiceQueryRecord(&ref,
+//                                      0,  // no flags
+//                                      0,  // all network interfaces
+//                                      kServiceMetaQueryName,  // meta-query record name
+//                                      ns_t_ptr,  // DNS PTR Record
+//                                      ns_c_in,  // Internet Class
+//                                      MyMetaQueryCallback,  // callback function ptr
+//                                      (__bridge void *)(self));  // no context
+//        
+//        if (error == kDNSServiceErr_NoError) {
+//            DNSServiceProcessResult(ref);
+//        }
         
-        /* Issue a Multicast DNS query for the service type meta-query PTR record. */
-        error = DNSServiceQueryRecord(&ref,
-                                      0,  // no flags
-                                      0,  // all network interfaces
-                                      kServiceMetaQueryName,  // meta-query record name
-                                      ns_t_ptr,  // DNS PTR Record
-                                      ns_c_in,  // Internet Class
-                                      MyMetaQueryCallback,  // callback function ptr
-                                      (__bridge void *)(self));  // no context
+        NSString *browseType = @"_services._dns-sd._udp.";
         
-        if (error == kDNSServiceErr_NoError) {
-            DNSServiceProcessResult(ref);
-        }
+        self.searchingTopLevel = true;
+        
+        [self.netServiceBrowser searchForServicesOfType:browseType inDomain:@""];
     }
     return self;
 }
 
 - (void)addServiceWithType:(char[])type domain:(char[])domain interfaceName:(char[])interfaceName
 {
-//    fprintf(stderr, "ADD      %-28s  %-14s %s\n", type, domain, interfaceName);
-    
     NSString *typeString = [NSString stringWithCString:type encoding:NSASCIIStringEncoding];
     NSString *domainString = [NSString stringWithCString:domain encoding:NSASCIIStringEncoding];
     NSString *interfaceNameString = [NSString stringWithCString:interfaceName encoding:NSASCIIStringEncoding];
     
-    NSLog(@"Type: %@, Domain: %@, Interface: %@", typeString, domainString, interfaceNameString);
+//    NSLog(@"Type: %@, Domain: %@, Interface: %@", typeString, domainString, interfaceNameString);
     
-    self.detectedServices = [self.detectedServices arrayByAddingObject:typeString];
+    ServiceListingTopLevelItem *item = [[ServiceListingTopLevelItem alloc] init];
+    [item setType:typeString];
+    [item setDomain:domainString];
+    
+    self.detectedServices = [self.detectedServices arrayByAddingObject:item];
+}
+
+- (void)netServiceBrowser:(NSNetServiceBrowser *)browser didFindService:(NSNetService *)service moreComing:(BOOL)moreComing
+{
+    NSString *type = [NSString stringWithFormat:@"%@.%@", [service name], [service type]];
+    type = [type substringToIndex:[type length]-7];
+    
+    if([browser isEqual:self.netServiceBrowser]) {
+//        self.detectedServices = [self.detectedServices arrayByAddingObject:type];
+        
+        NameResolverNetServiceBrowser *nameResolver = [[NameResolverNetServiceBrowser alloc] init];
+        [nameResolver setDelegate:self];
+        [nameResolver setMasterService:service];
+        
+        [self.serviceNameResolvers addObject:nameResolver];
+        
+        [nameResolver searchForServicesOfType:type inDomain:@""];
+    } else {
+        NSLog(@"%@ %@", [service name], [service type]);
+        
+        NameResolverNetServiceBrowser *nameResolver = (NameResolverNetServiceBrowser *)browser;
+        
+        ServiceListingTopLevelItem *item = [[ServiceListingTopLevelItem alloc] init];
+        [item setType:[service type]];
+//        [item setDomain:domainString];
+        [item setMasterService:[nameResolver masterService]];
+        [item setResolvedService:service];
+        
+        self.detectedServices = [self.detectedServices arrayByAddingObject:item];
+        
+        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"BonjourServiceUpdate" object:nil]];
+    }
+    
+    if(!moreComing) {
+//        [browser stop];
+        
+        if(![browser isEqual:self.netServiceBrowser]) {
+//            [self.serviceNameResolvers removeObject:browser];
+        }
+    }
+    
+//    if(!moreComing) {
+//        if(self.searchingTopLevel) {
+//            self.index = 0;
+//        }
+//        self.searchingTopLevel = false;
+//        [self.netServiceBrowser stop];
+////        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+////            [self searchTest];
+////        }];
+//    }
+}
+
+- (void)searchTest
+{
+    if(self.index >= [self.detectedServices count]) {
+        return;
+    }
+    
+    NSString *serviceName = [self.detectedServices objectAtIndex:self.index];
+    self.index = self.index+1;
+    
+    [self.netServiceBrowser searchForServicesOfType:serviceName inDomain:@""];
+}
+
+- (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)browser
+{
+    
+}
+
+- (void)netServiceBrowser:(NSNetServiceBrowser *)browser didNotSearch:(NSDictionary<NSString *,NSNumber *> *)errorDict
+{
+    NSLog(errorDict);
 }
 
 #pragma mark - C Methods
 
 typedef struct { unsigned char c[ 64]; } domainlabel;      // One label: length byte and up to 63 characters.
 typedef struct { unsigned char c[256]; } domainname;       // Up to 255 bytes of length-prefixed domainlabels.
+
+void
+DNSSD_API MetaQueryCallback(DNSServiceRef service, DNSServiceFlags flags, uint32_t interfaceID, DNSServiceErrorType error,
+                              const char * fullname, uint16_t rrtype, uint16_t rrclass, uint16_t rdlen, const void * rdata, uint32_t ttl, void * context)
+{
+    printf(fullname);
+}
 
 void
 DNSSD_API MyMetaQueryCallback(DNSServiceRef service, DNSServiceFlags flags, uint32_t interfaceID, DNSServiceErrorType error,
@@ -80,6 +184,8 @@ DNSSD_API MyMetaQueryCallback(DNSServiceRef service, DNSServiceFlags flags, uint
     assert(strcmp(fullname, kServiceMetaQueryName) == 0);
     
     DNSQuerier *self = (__bridge DNSQuerier *)context;
+    
+//    printf("%s", rdata);
     
     if (error == kDNSServiceErr_NoError) {
         
@@ -98,6 +204,24 @@ DNSSD_API MyMetaQueryCallback(DNSServiceRef service, DNSServiceFlags flags, uint
         
         if (flags & kDNSServiceFlagsAdd) {
             [self addServiceWithType:type domain:domain interfaceName:interfaceName];
+            
+            DNSServiceErrorType error;
+            
+            DNSServiceRef ref;
+            
+            /* Issue a Multicast DNS query for the service type meta-query PTR record. */
+            error = DNSServiceQueryRecord(&ref,
+                                          0,  // no flags
+                                          0,  // all network interfaces
+                                          type,  // meta-query record name
+                                          ns_t_ptr,  // DNS PTR Record
+                                          ns_c_in,  // Internet Class
+                                          MetaQueryCallback,  // callback function ptr
+                                          (__bridge void *)(self));  // no context
+            
+            if (error == kDNSServiceErr_NoError) {
+                DNSServiceProcessResult(ref);
+            }
         } else {
             /* REMOVE is only called when a network interface is disabled or if the record
              expires from the cache.  For network efficiency reasons, clients do not send

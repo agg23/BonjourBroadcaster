@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ServiceListingWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
+@interface ServiceListingWindowController : NSWindowController <NSOutlineViewDataSource, NSOutlineViewDelegate>
 
-@property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSOutlineView *outlineView;
 
 @end
