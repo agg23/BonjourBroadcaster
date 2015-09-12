@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSString *domain;
 
-@property (strong, nonatomic) NSArray *resolvedNames;
+@property (strong, nonatomic) NSArray *children;
 
 @property (strong, nonatomic) NSNetService *masterService;
 @property (strong, nonatomic) NSArray *resolvingServices;

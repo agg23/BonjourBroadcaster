@@ -9,6 +9,7 @@
 #import "DNSQuerier.h"
 
 #import "ServiceListingTopLevelItem.h"
+#import "ServiceListingChildItem.h"
 #import "NameResolverNetServiceBrowser.h"
 
 @interface DNSQuerier ()
@@ -91,15 +92,21 @@
             return;
         }
         
-        [item setResolvedNames:[[item resolvedNames] arrayByAddingObject:[service name]]];
+        ServiceListingChildItem *childItem = [[ServiceListingChildItem alloc] init];
+        [childItem setName:[service name]];
+        [childItem setParentItem:item];
+        [childItem setResolvingService:service];
+        
+        [item setChildren:[[item children] arrayByAddingObject:childItem]];
+        
         [item setResolvingServices:[[item resolvingServices] arrayByAddingObject:service]];
+        
+        [service resolveWithTimeout:1.0f];
         
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"BonjourServiceUpdate" object:nil]];
     }
     
     if(!moreComing) {
-//        [browser stop];
-        
         if(![browser isEqual:self.netServiceBrowser]) {
             // Sort array, with named items on top, and unnamed services below
             self.detectedServices = [self.detectedServices sortedArrayUsingComparator:^NSComparisonResult(ServiceListingTopLevelItem *obj1, ServiceListingTopLevelItem *obj2) {
@@ -135,17 +142,6 @@
             }];
         }
     }
-    
-//    if(!moreComing) {
-//        if(self.searchingTopLevel) {
-//            self.index = 0;
-//        }
-//        self.searchingTopLevel = false;
-//        [self.netServiceBrowser stop];
-////        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-////            [self searchTest];
-////        }];
-//    }
 }
 
 - (ServiceListingTopLevelItem *)topLevelItemWithNamedService:(NSNetService *)namedService

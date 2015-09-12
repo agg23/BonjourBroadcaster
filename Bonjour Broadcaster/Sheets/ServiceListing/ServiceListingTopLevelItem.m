@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        self.resolvedNames = [NSArray array];
+        self.children = [NSArray array];
         self.resolvingServices = [NSArray array];
     }
     return self;
