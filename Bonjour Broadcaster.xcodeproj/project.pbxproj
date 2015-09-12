@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		660196351B9CEFBC002E5B82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660196341B9CEFBC002E5B82 /* QuartzCore.framework */; };
 		6601963A1B9E4A95002E5B82 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 660196391B9E4A95002E5B82 /* DataLoader.m */; settings = {ASSET_TAGS = (); }; };
+		660EF8BB1BA3C47C00FF1E9F /* ServiceListingAddressItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 660EF8BA1BA3C47C00FF1E9F /* ServiceListingAddressItem.m */; settings = {ASSET_TAGS = (); }; };
 		660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F73691B9BAD190086AD3D /* AppDelegate.m */; };
 		660F736C1B9BAD190086AD3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 660F736B1B9BAD190086AD3D /* main.m */; };
 		660F736E1B9BAD190086AD3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F736D1B9BAD190086AD3D /* Images.xcassets */; };
@@ -34,6 +35,8 @@
 		660196341B9CEFBC002E5B82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		660196381B9E4A95002E5B82 /* DataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataLoader.h; path = Storage/DataLoader.h; sourceTree = "<group>"; };
 		660196391B9E4A95002E5B82 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataLoader.m; path = Storage/DataLoader.m; sourceTree = "<group>"; };
+		660EF8B91BA3C47C00FF1E9F /* ServiceListingAddressItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceListingAddressItem.h; path = Sheets/ServiceListing/ServiceListingAddressItem.h; sourceTree = "<group>"; };
+		660EF8BA1BA3C47C00FF1E9F /* ServiceListingAddressItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceListingAddressItem.m; path = Sheets/ServiceListing/ServiceListingAddressItem.m; sourceTree = "<group>"; };
 		660F73631B9BAD190086AD3D /* Bonjour Broadcaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bonjour Broadcaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		660F73671B9BAD190086AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660F73681B9BAD190086AD3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				6634F9671BA2199B00998874 /* ServiceListingTopLevelItem.m */,
 				6634F96E1BA373CD00998874 /* ServiceListingChildItem.h */,
 				6634F96F1BA373CD00998874 /* ServiceListingChildItem.m */,
+				660EF8B91BA3C47C00FF1E9F /* ServiceListingAddressItem.h */,
+				660EF8BA1BA3C47C00FF1E9F /* ServiceListingAddressItem.m */,
 			);
 			name = ServiceListing;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				660F736C1B9BAD190086AD3D /* main.m in Sources */,
 				660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */,
 				6634F9631BA126C400998874 /* ServiceListingWindowController.m in Sources */,
+				660EF8BB1BA3C47C00FF1E9F /* ServiceListingAddressItem.m in Sources */,
 				6634F96B1BA2796200998874 /* NameResolverNetServiceBrowser.m in Sources */,
 				6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */,
 				660F738C1B9BAF760086AD3D /* BonjourHost.m in Sources */,

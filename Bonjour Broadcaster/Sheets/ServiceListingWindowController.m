@@ -10,6 +10,7 @@
 
 #import "ServiceListingTopLevelItem.h"
 #import "ServiceListingChildItem.h"
+#import "ServiceListingAddressItem.h"
 
 #import "DNSQuerier.h"
 
@@ -105,7 +106,7 @@
             NSInteger addressCount = [[resolvingService addresses] count];
             
             if(![childItem addresses]) {
-                NSArray *array = [self addressStringArrayFromAddressDataArray:[resolvingService addresses]];
+                NSArray *array = [self addressArrayFromAddressDataArray:[resolvingService addresses]];
                 
                 [childItem setAddresses:array];
             }
@@ -129,7 +130,8 @@
 
 - (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
 {
-    if(!item || (![item isKindOfClass:[ServiceListingTopLevelItem class]] && ![item isKindOfClass:[NSString class]] && ![item isKindOfClass:[ServiceListingChildItem class]])) {
+    if(!item || (![item isKindOfClass:[ServiceListingTopLevelItem class]] && ![item isKindOfClass:[NSString class]]
+                 && ![item isKindOfClass:[ServiceListingChildItem class]] && ![item isKindOfClass:[ServiceListingAddressItem class]])) {
         return @"";
     }
     
@@ -144,6 +146,8 @@
             return [(ServiceListingTopLevelItem *)item type];
         } else if([item isKindOfClass:[ServiceListingChildItem class]]) {
             return [item name];
+        } else if([item isKindOfClass:[ServiceListingAddressItem class]]) {
+            return [item address];
         } else if([item isKindOfClass:[NSString class]]) {
             return item;
         }
@@ -157,13 +161,30 @@
     return @"";
 }
 
+- (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+    if(!item || ![item isKindOfClass:[ServiceListingAddressItem class]]) {
+        return;
+    }
+    
+    NSString *string = [cell stringValue];
+    
+    NSColor *textColor = [NSColor colorWithCalibratedWhite:0.4f alpha:1.0f];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:textColor, NSForegroundColorAttributeName, nil];
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:string attributes:dictionary];
+    
+    [cell setAttributedStringValue:attributedString];
+}
+
 #pragma mark - Utility Methods
 
-- (NSArray *)addressStringArrayFromAddressDataArray:(NSArray *)array
+- (NSArray *)addressArrayFromAddressDataArray:(NSArray *)array
 {
     NSMutableArray *addressArray = [NSMutableArray array];
     
     for(NSData *data in array) {
+        // Thanks to http://stackoverflow.com/questions/13396892/getting-sockaddr-in-from-cfdataref
+        
         int port=0;
         struct sockaddr *addressGeneric = (struct sockaddr *) [data bytes];
         NSString *addressString = @"";
@@ -174,7 +195,7 @@
                 char dest[INET_ADDRSTRLEN];
                 ip4 = (struct sockaddr_in *) [data bytes];
                 port = ntohs(ip4->sin_port);
-                addressString = [NSString stringWithFormat: @"IP4: %s Port: %d", inet_ntop(AF_INET, &ip4->sin_addr, dest, sizeof dest),port];
+                addressString = [NSString stringWithFormat: @"%s:%d", inet_ntop(AF_INET, &ip4->sin_addr, dest, sizeof dest),port];
             }
                 break;
                 
@@ -183,7 +204,7 @@
                 char dest[INET6_ADDRSTRLEN];
                 ip6 = (struct sockaddr_in6 *) [data bytes];
                 port = ntohs(ip6->sin6_port);
-                addressString = [NSString stringWithFormat: @"IP6: %s Port: %d",  inet_ntop(AF_INET6, &ip6->sin6_addr, dest, sizeof dest),port];
+                addressString = [NSString stringWithFormat: @"[%s]:%d",  inet_ntop(AF_INET6, &ip6->sin6_addr, dest, sizeof dest),port];
             }
                 break;
             default:
@@ -191,7 +212,10 @@
                 break;
         }
         
-        [addressArray addObject:addressString];
+        ServiceListingAddressItem *item = [[ServiceListingAddressItem alloc] init];
+        [item setAddress:addressString];
+        
+        [addressArray addObject:item];
     }
     
     return [NSArray arrayWithArray:addressArray];
