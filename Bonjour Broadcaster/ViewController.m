@@ -94,6 +94,7 @@
 
 - (IBAction)bonjourServiceListButton:(id)sender {
     self.serviceListingWindowController = [[ServiceListingWindowController alloc] initWithWindowNibName:@"ServiceListing"];
+    [self.serviceListingWindowController setViewController:self];
     
     [self.view.window beginSheet:self.serviceListingWindowController.window completionHandler:^(NSModalResponse returnCode) {
         

@@ -23,25 +23,17 @@
 
 @end
 
+NSString *const browseType = @"_services._dns-sd._udp.";
+
 @implementation DNSQuerier
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.detectedServices = [NSArray array];
-        self.serviceNameResolvers = [NSMutableArray array];
-        
-        self.netServiceBrowser = [[NSNetServiceBrowser alloc] init];
-        self.netServiceBrowser.delegate = self;
-        
         [self loadKnownServices];
         
-        NSString *browseType = @"_services._dns-sd._udp.";
-        
-        self.searchingTopLevel = true;
-        
-        [self.netServiceBrowser searchForServicesOfType:browseType inDomain:@""];
+        [self reload];
     }
     return self;
 }
@@ -55,6 +47,19 @@
     self.knownServices = [dictionary objectForKey:@"Services"];
 }
 
+- (void)reload
+{
+    self.detectedServices = [NSArray array];
+    self.serviceNameResolvers = [NSMutableArray array];
+    
+    self.netServiceBrowser = [[NSNetServiceBrowser alloc] init];
+    self.netServiceBrowser.delegate = self;
+    
+    self.searchingTopLevel = true;
+    
+    [self.netServiceBrowser searchForServicesOfType:browseType inDomain:@"local."];
+}
+
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser didFindService:(NSNetService *)service moreComing:(BOOL)moreComing
 {
     NSString *type = [NSString stringWithFormat:@"%@.%@", [service name], [service type]];
@@ -64,6 +69,8 @@
         NameResolverNetServiceBrowser *nameResolver = [[NameResolverNetServiceBrowser alloc] init];
         [nameResolver setDelegate:self];
         [nameResolver setMasterService:service];
+        
+        NSLog(@"%@", type);
         
         if(![self topLevelItemExistsWithServiceType:type]) {
             ServiceListingTopLevelItem *item = [[ServiceListingTopLevelItem alloc] init];

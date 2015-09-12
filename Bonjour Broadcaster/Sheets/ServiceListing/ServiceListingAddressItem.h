@@ -12,4 +12,8 @@
 
 @property (strong, nonatomic) NSString *address;
 
+@property (strong, nonatomic) NSString *rawIp;
+
+@property (nonatomic) NSInteger port;
+
 @end

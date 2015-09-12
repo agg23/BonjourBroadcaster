@@ -53,8 +53,6 @@
 		6634E4B51B9BB6E000CD1759 /* ServiceEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServiceEditor.xib; path = Sheets/ServiceEditor.xib; sourceTree = "<group>"; };
 		6634E4BA1B9BB82300CD1759 /* ServiceEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceEditorWindowController.h; path = Sheets/ServiceEditorWindowController.h; sourceTree = "<group>"; };
 		6634E4BB1B9BB82300CD1759 /* ServiceEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceEditorWindowController.m; path = Sheets/ServiceEditorWindowController.m; sourceTree = "<group>"; };
-		6634F9591BA10F2800998874 /* DNSServiceMetaQuery.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = DNSServiceMetaQuery.c; path = "DNS Query/DNSServiceMetaQuery.c"; sourceTree = "<group>"; };
-		6634F95C1BA1103000998874 /* DNSServiceMetaQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSServiceMetaQuery.h; path = "DNS Query/DNSServiceMetaQuery.h"; sourceTree = "<group>"; };
 		6634F95D1BA1170D00998874 /* DNSQuerier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSQuerier.h; path = "DNS Query/DNSQuerier.h"; sourceTree = "<group>"; };
 		6634F95E1BA1170D00998874 /* DNSQuerier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNSQuerier.m; path = "DNS Query/DNSQuerier.m"; sourceTree = "<group>"; };
 		6634F9601BA126C400998874 /* ServiceListingWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceListingWindowController.h; path = Sheets/ServiceListingWindowController.h; sourceTree = "<group>"; };
@@ -178,8 +176,6 @@
 		6634F9581BA10EB600998874 /* DNS Query */ = {
 			isa = PBXGroup;
 			children = (
-				6634F9591BA10F2800998874 /* DNSServiceMetaQuery.c */,
-				6634F95C1BA1103000998874 /* DNSServiceMetaQuery.h */,
 				6634F95D1BA1170D00998874 /* DNSQuerier.h */,
 				6634F95E1BA1170D00998874 /* DNSQuerier.m */,
 				6634F9691BA2796200998874 /* NameResolverNetServiceBrowser.h */,

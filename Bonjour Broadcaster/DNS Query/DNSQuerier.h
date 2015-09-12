@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) NSArray *detectedServices;
 
+- (void)reload;
+
 @end

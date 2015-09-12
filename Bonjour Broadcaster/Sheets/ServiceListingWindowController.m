@@ -8,6 +8,8 @@
 
 #import "ServiceListingWindowController.h"
 
+#import "ViewController.h"
+
 #import "ServiceListingTopLevelItem.h"
 #import "ServiceListingChildItem.h"
 #import "ServiceListingAddressItem.h"
@@ -50,6 +52,19 @@
     [self.outlineView reloadData];
 }
 
+- (IBAction)reloadButton:(id)sender {
+    [self.querier reload];
+}
+
+- (IBAction)duplicateButton:(id)sender {
+    ServiceListingChildItem *item = [self.outlineView itemAtRow:[self.outlineView selectedRow]];
+    
+    BonjourService *service = [self serviceFromChildItem:item];
+    
+    [self.window orderOut:nil];
+    [(ViewController *)self.viewController showServiceEditorAndEditService:service];
+}
+
 #pragma mark - NSOutlineViewDataSource/Delegate Methods
 
 - (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
@@ -58,6 +73,9 @@
         if([item isKindOfClass:[ServiceListingTopLevelItem class]]) {
             // Children of given item
             ServiceListingChildItem *childItem = [[(ServiceListingTopLevelItem *)item children] objectAtIndex:index];
+            
+            [self sortAddressesAndTxtRecordsIfNeeded:childItem];
+
             return childItem;
         } else if([item isKindOfClass:[ServiceListingChildItem class]]) {
             // Children of given item
@@ -65,6 +83,8 @@
             
             NSNetService *resolvingService = [childItem resolvingService];
             NSInteger addressCount = [[resolvingService addresses] count];
+            
+            [self sortAddressesAndTxtRecordsIfNeeded:childItem];
 
             if(index < addressCount) {
                 return [[childItem addresses] objectAtIndex:index];
@@ -105,21 +125,7 @@
             NSNetService *resolvingService = [childItem resolvingService];
             NSInteger addressCount = [[resolvingService addresses] count];
             
-            if(![childItem addresses]) {
-                NSArray *array = [self addressArrayFromAddressDataArray:[resolvingService addresses]];
-                
-                [childItem setAddresses:array];
-            }
-            
-            if(![childItem txtRecords]) {
-                NSDictionary *dictionary = [NSNetService dictionaryFromTXTRecordData:[resolvingService TXTRecordData]];
-                
-                if(dictionary) {
-                    NSArray *array = [self txtArrayFromDictionary:dictionary];
-                    
-                    [childItem setTxtRecords:array];
-                }
-            }
+            [self sortAddressesAndTxtRecordsIfNeeded:childItem];
             
             return addressCount + [[childItem txtRecords] count];
         }
@@ -176,7 +182,63 @@
     [cell setAttributedStringValue:attributedString];
 }
 
+- (NSIndexSet *)outlineView:(NSOutlineView *)outlineView selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes
+{
+    if([proposedSelectionIndexes lastIndex] - [proposedSelectionIndexes firstIndex] > 1) {
+        return [outlineView selectedRowIndexes];
+    }
+    
+    NSInteger row = [proposedSelectionIndexes firstIndex];
+    
+    id item = [outlineView itemAtRow:row];
+    
+    if([item isKindOfClass:[ServiceListingChildItem class]]) {
+        [self.duplicateButton setEnabled:YES];
+    } else {
+        [self.duplicateButton setEnabled:NO];
+    }
+    
+    return proposedSelectionIndexes;
+}
+
 #pragma mark - Utility Methods
+
+- (void)sortAddressesAndTxtRecordsIfNeeded:(ServiceListingChildItem *)childItem
+{
+    if(![childItem addresses]) {
+        NSArray *array = [self addressArrayFromAddressDataArray:[[childItem resolvingService] addresses]];
+        
+        [childItem setAddresses:array];
+    }
+    
+    if(![childItem txtRecords]) {
+        NSDictionary *dictionary = [NSNetService dictionaryFromTXTRecordData:[[childItem resolvingService] TXTRecordData]];
+        
+        if(dictionary) {
+            NSArray *array = [self txtArrayFromDictionary:dictionary];
+            
+            [childItem setTxtRecords:array];
+        }
+    }
+}
+
+- (BonjourService *)serviceFromChildItem:(ServiceListingChildItem *)childItem
+{
+    BonjourService *service = [[BonjourService alloc] init];
+    
+    [service setName:[[childItem name] stringByAppendingString:@" Copy"]];
+    [service setServiceType:[[childItem parentItem] type]];
+    [service setTxtItems:[childItem txtRecords]];
+    
+    if([[childItem addresses] count] > 0) {
+        ServiceListingAddressItem *addressItem = [[childItem addresses] objectAtIndex:0];
+        
+        [service setPort:[addressItem port]];
+        [service setRemoteIp:[addressItem rawIp]];
+    }
+    
+    return service;
+}
 
 - (NSArray *)addressArrayFromAddressDataArray:(NSArray *)array
 {
@@ -188,6 +250,7 @@
         int port=0;
         struct sockaddr *addressGeneric = (struct sockaddr *) [data bytes];
         NSString *addressString = @"";
+        NSString *rawIp = @"";
         
         switch( addressGeneric->sa_family ) {
             case AF_INET: {
@@ -195,7 +258,8 @@
                 char dest[INET_ADDRSTRLEN];
                 ip4 = (struct sockaddr_in *) [data bytes];
                 port = ntohs(ip4->sin_port);
-                addressString = [NSString stringWithFormat: @"%s:%d", inet_ntop(AF_INET, &ip4->sin_addr, dest, sizeof dest),port];
+                rawIp = [NSString stringWithFormat:@"%s", inet_ntop(AF_INET, &ip4->sin_addr, dest, sizeof dest)];
+                addressString = [NSString stringWithFormat: @"%@:%d", rawIp, port];
             }
                 break;
                 
@@ -204,7 +268,8 @@
                 char dest[INET6_ADDRSTRLEN];
                 ip6 = (struct sockaddr_in6 *) [data bytes];
                 port = ntohs(ip6->sin6_port);
-                addressString = [NSString stringWithFormat: @"[%s]:%d",  inet_ntop(AF_INET6, &ip6->sin6_addr, dest, sizeof dest),port];
+                rawIp = [NSString stringWithFormat:@"%s", inet_ntop(AF_INET6, &ip6->sin6_addr, dest, sizeof dest)];
+                addressString = [NSString stringWithFormat: @"[%@]:%d", rawIp, port];
             }
                 break;
             default:
@@ -214,6 +279,8 @@
         
         ServiceListingAddressItem *item = [[ServiceListingAddressItem alloc] init];
         [item setAddress:addressString];
+        [item setRawIp:rawIp];
+        [item setPort:port];
         
         [addressArray addObject:item];
     }

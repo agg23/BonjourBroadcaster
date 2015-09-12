@@ -10,6 +10,9 @@
 
 @interface ServiceListingWindowController : NSWindowController <NSOutlineViewDataSource, NSOutlineViewDelegate>
 
+@property (weak) NSViewController *viewController;
+
 @property (weak) IBOutlet NSOutlineView *outlineView;
+@property (weak) IBOutlet NSButton *duplicateButton;
 
 @end

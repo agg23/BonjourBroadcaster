@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ServiceListingWindowController">
             <connections>
+                <outlet property="duplicateButton" destination="SsY-2F-RHM" id="D9F-dr-rch"/>
                 <outlet property="outlineView" destination="kRU-hB-uH3" id="1QP-Vy-SvC"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -94,6 +95,26 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acC-eY-7cf">
+                        <rect key="frame" x="14" y="3" width="84" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="L9W-Ta-eaE">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="reloadButton:" target="-2" id="Gbi-5F-F9t"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsY-2F-RHM">
+                        <rect key="frame" x="98" y="3" width="99" height="32"/>
+                        <buttonCell key="cell" type="push" title="Duplicate" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UKW-sT-2cw">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="duplicateButton:" target="-2" id="S67-PI-hnP"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <connections>
