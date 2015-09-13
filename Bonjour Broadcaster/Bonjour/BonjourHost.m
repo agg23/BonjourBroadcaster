@@ -169,7 +169,14 @@
         return nil;
     }
     
-    return [NSDictionary dictionaryWithObject:[array objectAtIndex:1] forKey:[array objectAtIndex:0]];
+    // Very hacky
+    NSString *txtData = [array objectAtIndex:1];
+    
+    for(int i = 2; i < [array count]; i++) {
+        txtData = [txtData stringByAppendingString:[NSString stringWithFormat:@"=%@", [array objectAtIndex:i]]];
+    }
+    
+    return [NSDictionary dictionaryWithObject:txtData forKey:[array objectAtIndex:0]];
 }
 
 - (NSData *)formatTxtArray:(NSArray *)array
