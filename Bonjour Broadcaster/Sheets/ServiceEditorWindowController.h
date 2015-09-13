@@ -25,6 +25,6 @@
 @property (weak) IBOutlet NSTextField *hostNameTextField;
 @property (weak) IBOutlet NSTextField *ipAddressTextField;
 
-- (void)editService:(BonjourService *)service;
+- (void)editService:(BonjourService *)service newService:(BOOL)newService;
 
 @end

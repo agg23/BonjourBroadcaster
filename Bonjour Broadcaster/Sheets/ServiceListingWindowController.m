@@ -62,7 +62,7 @@
     BonjourService *service = [self serviceFromChildItem:item];
     
     [self.window orderOut:nil];
-    [(ViewController *)self.viewController showServiceEditorAndEditService:service];
+    [(ViewController *)self.viewController showServiceEditorAndEditService:service shouldAddToDisplay:YES];
 }
 
 #pragma mark - NSOutlineViewDataSource/Delegate Methods

@@ -16,6 +16,6 @@
 
 - (void)addRowAtIndex:(NSInteger)index;
 
-- (void)showServiceEditorAndEditService:(BonjourService *)service;
+- (void)showServiceEditorAndEditService:(BonjourService *)service shouldAddToDisplay:(BOOL)add;
 
 @end

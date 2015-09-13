@@ -75,8 +75,6 @@
 
 - (void)updateService:(BonjourService *)service
 {
-    // TODO: Handle rebroadcasting
-    
     if(service.serviceRef) {
         [self disableService:service];
         [self enableService:service];

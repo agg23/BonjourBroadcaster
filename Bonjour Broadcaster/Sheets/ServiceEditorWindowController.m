@@ -15,6 +15,7 @@
 @interface ServiceEditorWindowController ()
 
 @property (strong, nonatomic) BonjourService *editingService;
+@property (nonatomic) BOOL newService;
 
 @end
 
@@ -54,9 +55,10 @@
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 
-- (void)editService:(BonjourService *)service
+- (void)editService:(BonjourService *)service newService:(BOOL)newService
 {
     self.editingService = service;
+    self.newService = newService;
 }
 
 - (IBAction)saveButton:(id)sender {
@@ -120,7 +122,7 @@
         [service setRemoteIp:remoteIp];
     }
     
-    if(self.editingService) {
+    if(self.editingService && !self.newService) {
         [[BonjourHost sharedInstance] updateService:service];
     } else {
         [[BonjourHost sharedInstance] addNewService:service];

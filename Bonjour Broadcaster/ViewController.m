@@ -35,15 +35,15 @@
 
 - (void)showServiceEditor
 {
-    [self showServiceEditorAndEditService:nil];
+    [self showServiceEditorAndEditService:nil shouldAddToDisplay:NO];
 }
 
-- (void)showServiceEditorAndEditService:(BonjourService *)service
+- (void)showServiceEditorAndEditService:(BonjourService *)service shouldAddToDisplay:(BOOL)add
 {
     self.serviceEditorWindowController = [[ServiceEditorWindowController alloc] initWithWindowNibName:@"ServiceEditor"];
     
     if(service) {
-        [self.serviceEditorWindowController editService:service];
+        [self.serviceEditorWindowController editService:service newService:add];
     }
     
     [self.view.window beginSheet:self.serviceEditorWindowController.window completionHandler:^(NSModalResponse returnCode) {
@@ -73,7 +73,7 @@
     
     BonjourService *service = [[[BonjourHost sharedInstance] services] objectAtIndex:selectedRow];
     
-    [self showServiceEditorAndEditService:service];
+    [self showServiceEditorAndEditService:service shouldAddToDisplay:NO];
 }
 
 - (IBAction)removeButton:(id)sender {
