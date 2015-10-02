@@ -29,6 +29,8 @@
 		6697209E1B9CD8D4006E9DA9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6697209D1B9CD8D4006E9DA9 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
 		669720A21B9CD9A8006E9DA9 /* TextEntryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */; settings = {ASSET_TAGS = (); }; };
 		669720A51B9CDC25006E9DA9 /* TextEntryRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669720A41B9CDC25006E9DA9 /* TextEntryRowView.m */; settings = {ASSET_TAGS = (); }; };
+		66B1A00B1BBE1B4000F323B8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1A00A1BBE1B4000F323B8 /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
+		66B1A00E1BBE1B6100F323B8 /* ReachabilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1A00D1BBE1B6100F323B8 /* ReachabilityController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,10 @@
 		669720A11B9CD9A8006E9DA9 /* TextEntryTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEntryTableView.m; path = "Sheets/Text Entry Manipulator/TextEntryTableView.m"; sourceTree = "<group>"; };
 		669720A31B9CDC25006E9DA9 /* TextEntryRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextEntryRowView.h; path = "Sheets/Text Entry Manipulator/TextEntryRowView.h"; sourceTree = "<group>"; };
 		669720A41B9CDC25006E9DA9 /* TextEntryRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEntryRowView.m; path = "Sheets/Text Entry Manipulator/TextEntryRowView.m"; sourceTree = "<group>"; };
+		66B1A0091BBE1B4000F323B8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Reachability/Reachability.h; sourceTree = "<group>"; };
+		66B1A00A1BBE1B4000F323B8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Reachability/Reachability.m; sourceTree = "<group>"; };
+		66B1A00C1BBE1B6100F323B8 /* ReachabilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReachabilityController.h; path = Reachability/ReachabilityController.h; sourceTree = "<group>"; };
+		66B1A00D1BBE1B6100F323B8 /* ReachabilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReachabilityController.m; path = Reachability/ReachabilityController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 				6634E4B41B9BB6AB00CD1759 /* Sheets */,
 				660196371B9E4A6B002E5B82 /* Storage */,
 				6634F9581BA10EB600998874 /* DNS Query */,
+				66B1A0051BBE197400F323B8 /* Reachability */,
 				660F736D1B9BAD190086AD3D /* Images.xcassets */,
 				660F736F1B9BAD190086AD3D /* MainMenu.xib */,
 				660F73661B9BAD190086AD3D /* Supporting Files */,
@@ -206,6 +213,17 @@
 				669720A41B9CDC25006E9DA9 /* TextEntryRowView.m */,
 			);
 			name = "Text Entry Manipulator";
+			sourceTree = "<group>";
+		};
+		66B1A0051BBE197400F323B8 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				66B1A00C1BBE1B6100F323B8 /* ReachabilityController.h */,
+				66B1A00D1BBE1B6100F323B8 /* ReachabilityController.m */,
+				66B1A0091BBE1B4000F323B8 /* Reachability.h */,
+				66B1A00A1BBE1B4000F323B8 /* Reachability.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +308,9 @@
 				6634F9701BA373CD00998874 /* ServiceListingChildItem.m in Sources */,
 				660F736C1B9BAD190086AD3D /* main.m in Sources */,
 				660F736A1B9BAD190086AD3D /* AppDelegate.m in Sources */,
+				66B1A00E1BBE1B6100F323B8 /* ReachabilityController.m in Sources */,
 				6634F9631BA126C400998874 /* ServiceListingWindowController.m in Sources */,
+				66B1A00B1BBE1B4000F323B8 /* Reachability.m in Sources */,
 				660EF8BB1BA3C47C00FF1E9F /* ServiceListingAddressItem.m in Sources */,
 				6634F96B1BA2796200998874 /* NameResolverNetServiceBrowser.m in Sources */,
 				6634E4BC1B9BB82300CD1759 /* ServiceEditorWindowController.m in Sources */,

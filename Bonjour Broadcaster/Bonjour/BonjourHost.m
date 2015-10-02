@@ -11,10 +11,12 @@
 #import <dns_sd.h>
 
 #import "DataLoader.h"
+#import "ReachabilityController.h"
 
 @interface BonjourHost ()
 
 @property (strong, nonatomic) DataLoader *dataLoader;
+@property (strong, nonatomic) ReachabilityController *reachabilityController;
 
 @end
 
@@ -42,6 +44,13 @@
     self = [super init];
     if (self) {
         self.dataLoader = [[DataLoader alloc] init];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reachabilityChanged:)
+                                                     name:kReachabilityChangedNotification
+                                                   object:nil];
+        
+        self.reachabilityController = [[ReachabilityController alloc] init];
+        [self.reachabilityController addServer:@""];
         
         self.services = [self.dataLoader loadServices];
         
@@ -161,6 +170,8 @@
     return true;
 }
 
+#pragma mark - Convenience Methods
+
 - (NSDictionary *)stringToDictionaryWithString:(NSString *)string
 {
     NSArray *array = [string componentsSeparatedByString:@"="];
@@ -179,21 +190,11 @@
     return [NSDictionary dictionaryWithObject:txtData forKey:[array objectAtIndex:0]];
 }
 
-- (NSData *)formatTxtArray:(NSArray *)array
+#pragma mark - Reachability Notifications
+
+- (void)reachabilityChanged:(NSNotification *)notification
 {
-    NSMutableData *data = [NSMutableData data];
     
-    for(NSString *string in array) {
-//        const char *cString = [string UTF8String];
-//        
-//        [data appendBytes:cString length:sizeof(cString)];
-        
-        char *characters = (char *)malloc([string length]);
-        [string getCString:characters maxLength:sizeof(characters) encoding:NSUTF8StringEncoding];
-        [data appendBytes:&characters length:sizeof(characters)];
-    }
-    
-    return [NSData dataWithData:data];
 }
 
 @end
