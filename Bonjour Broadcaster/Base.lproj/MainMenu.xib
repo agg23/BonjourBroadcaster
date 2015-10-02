@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8187.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -679,7 +679,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Bonjour Broadcaster" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="Bonjour Broadcaster" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="704" height="370"/>
@@ -691,12 +691,13 @@
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06t-o6-5kc">
                         <rect key="frame" x="-1" y="0.0" width="706" height="332"/>
                         <clipView key="contentView" id="aP0-gQ-h0k">
-                            <rect key="frame" x="1" y="17" width="704" height="314"/>
+                            <rect key="frame" x="1" y="0.0" width="704" height="331"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="7QY-3e-9Cf" id="TbI-3a-wJG">
-                                    <rect key="frame" x="0.0" y="0.0" width="615" height="19"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="704" height="308"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -785,19 +786,24 @@
                                     </connections>
                                 </tableView>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
+                        <animations/>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ysZ-2I-7O5">
                             <rect key="frame" x="1" y="316" width="704" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="ajI-Ob-zfp">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
                         </scroller>
                         <tableHeaderView key="headerView" id="7QY-3e-9Cf">
-                            <rect key="frame" x="0.0" y="0.0" width="704" height="17"/>
+                            <rect key="frame" x="0.0" y="0.0" width="704" height="23"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
                         </tableHeaderView>
                     </scrollView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sbx-tW-sNF">
@@ -805,6 +811,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="yEj-BD-6Bt"/>
                         </constraints>
+                        <animations/>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CP8-b1-SnI">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -818,6 +825,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="qiF-og-zao"/>
                         </constraints>
+                        <animations/>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSListViewTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RMh-lZ-FKs">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -831,6 +839,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="Dxy-lw-A6j"/>
                         </constraints>
+                        <animations/>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VlB-C8-P4b">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -844,6 +853,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="JZj-1e-4PU"/>
                         </constraints>
+                        <animations/>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z53-Ei-vJV">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -857,6 +867,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="zqF-XH-gQY"/>
                         </constraints>
+                        <animations/>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSBonjour" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0c3-WQ-qXH">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -883,6 +894,7 @@
                     <constraint firstItem="LvQ-ts-2CS" firstAttribute="leading" secondItem="Ngf-HH-7gi" secondAttribute="trailing" constant="8" id="sTw-fJ-FnS"/>
                     <constraint firstItem="sbx-tW-sNF" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="8" id="vx9-0a-93K"/>
                 </constraints>
+                <animations/>
             </view>
             <point key="canvasLocation" x="-56" y="-68"/>
         </window>
